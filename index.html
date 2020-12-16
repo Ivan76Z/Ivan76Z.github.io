@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <title>mini-ANN-test</title>
+  <script src="matrix.js"></script>
+  <script src="mini-ann.js"></script>
+  <script src="test.js"></script>
+  <script>
+  	  function DrawableCanvas(el) {
+            const px = 15
+            const ctx = el.getContext('2d')
+            let x = []
+            let y = []
+            let moves = []
+            let isPainting = false
+
+            const clear = () => ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+
+            const addPoint = (_x, _y, isMoving) => {
+                x.push(_x)
+                y.push(_y)
+                moves.push(isMoving)
+            }
+
+            const redraw = () => {
+                clear()
+
+                ctx.strokeStyle = 'red'
+                ctx.lineJoin = 'round'
+                ctx.lineWidth = px
+
+                for (let i = 0; i < moves.length; i++) {
+                    ctx.beginPath()
+                    if (moves[i] && i) {
+                        ctx.moveTo(x[i - 1], y[i - 1])
+                    } else {
+                        ctx.moveTo(x[i] - 1, y[i])
+                    }
+                    ctx.lineTo(x[i], y[i])
+                    ctx.closePath()
+                    ctx.stroke()
+                }
+            }
+
+            const drawLine = (x1, y1, x2, y2, color = 'lightgray') => {
+                ctx.beginPath()
+                ctx.strokeStyle = color
+                ctx.lineJoin = 'miter'
+                ctx.lineWidth = 1
+                ctx.moveTo(x1, y1)
+                ctx.lineTo(x2, y2)
+                ctx.stroke()
+            }
+
+            const grid = () => {
+                const w = el.clientWidth
+                const h = el.clientHeight
+                const p = el.clientWidth / px
+                const xStep = w / p
+                const yStep = h / p
+
+                for(let x = 0; x < w; x += xStep) {
+                    drawLine(x, 0, x, h)
+                }
+                for(let y = 0; y < h; y += yStep) {
+                    drawLine(0, y, w, y)
+                }
+            }
+
+            const cell = (x, y, w, h) => {
+                ctx.fillStyle = 'blue'
+                ctx.strokeStyle = 'blue'
+                ctx.lineJoin = 'miter'
+                ctx.lineWidth = 1
+                ctx.rect(x, y, w, h)
+                ctx.fill()
+            }
+
+
+            this.reset = () => {
+                isPainting = false
+                x = []
+                y = []
+                moves = []
+                clear()
+            }
+
+            this.getVector = (debug = false) => {
+                const w = el.clientWidth
+                const h = el.clientHeight
+                const p = el.clientWidth / px
+                const xStep = w / p
+                const yStep = h / p
+                const vector = []
+                for(let x = 0; x < w; x += xStep) {
+                    for(let y = 0; y < h; y += yStep) {
+                        const data = ctx.getImageData(x, y, xStep, yStep)
+
+                        let nonEmptyPixelsCount = 0
+                        for(let i = 0; i < data.data.length; i += 4) {
+                            const isEmpty = data.data[i] === 0
+                            if (!isEmpty) {
+                                nonEmptyPixelsCount += 1
+                            }
+                        }
+
+                        if (nonEmptyPixelsCount > 1 && debug) {
+                            cell(x, y, xStep, yStep)
+                        }
+
+                        vector.push(nonEmptyPixelsCount > 1 ? 1 : 0)
+                    }
+                }
+
+                if (debug) {
+                    grid()
+                }
+                return vector
+            }
+
+            el.addEventListener('mousedown', event => {
+                const bounds = event.target.getBoundingClientRect()
+                const x = event.clientX - bounds.left
+                const y = event.clientY - bounds.top
+                isPainting = true
+                addPoint(x, y, false)
+                redraw()
+            })
+
+            el.addEventListener('mousemove', event => {
+                const bounds = event.target.getBoundingClientRect()
+                const x = event.clientX - bounds.left
+                const y = event.clientY - bounds.top
+                if (isPainting) {
+                    addPoint(x, y, true)
+                    redraw()
+                }
+            })
+
+            el.addEventListener('mouseup', () => {
+                isPainting = false
+            })
+
+            el.addEventListener('mouseleave', () => {
+                isPainting = false
+            })
+        }
+  </script>
+</head>
+<body>
+	 <table align="center" cellspacing="0" cellpadding="1" border="0">
+        <caption>
+            <h3>Рисование на холстах с целью обучения</h3>
+            <p>Нарисуйте по 3 экземпляра данных цифр</p>
+        </caption>
+        <tr>
+            <th>1</th>
+            <td>
+                <canvas id="n11" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+            </td>
+            <td>
+                <canvas id="n12" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+            </td>
+            <td>
+                <canvas id="n13" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+            </td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>
+                <canvas id="n21" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+            </td>
+            <td>
+                <canvas id="n22" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+            </td>
+            <td>
+                <canvas id="n23" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+            </td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>
+                <canvas id="n31" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+            </td>
+            <td>
+                <canvas id="n32" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+            </td>
+            <td>
+                <canvas id="n33" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+            </td>
+        </tr>
+    </table>
+
+    <table width="100%" align="center">
+        <caption>
+            <h3>Тренировка</h3>
+            <button id="train">Тренировать</button>
+            <label><input type="checkbox" id="dbg"/> debug</label>
+        </caption>
+        <tr>
+            <td align="center">
+                <table>
+                    <tbody id="res" style="display: none">
+                        <tr>
+                            <th>Ошибка</th>
+                            <td id="err"></td>
+                        </tr>
+                        <tr>
+                            <th>Попыток</th>
+                            <td id="iterations"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table align="center">
+        <caption>
+            <h3>Рисование</h3>
+            <button id="guess">Проверить</button>
+        </caption>
+        <tr>
+            <td align="center">
+                <canvas id="g" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+            </td>
+        </tr>
+        <div id="sv"></div>
+    </table>
+    <!--
+    <img crossorigin="anonymous" src="11.jpg" id="i11" style="width:200px;height:200px">
+    <img crossorigin="anonymous" src="12.jpg" id="i12" style="width:200px;height:200px">
+    <img crossorigin="anonymous" src="13.jpg" id="i13" style="width:200px;height:200px">
+    <img crossorigin="anonymous" src="21.jpg" id="i21" style="width:200px;height:200px">
+    <img crossorigin="anonymous" src="22.jpg" id="i22" style="width:200px;height:200px">
+    <img crossorigin="anonymous" src="23.jpg" id="i23" style="width:200px;height:200px">
+    <img crossorigin="anonymous" src="31.jpg" id="i31" style="width:200px;height:200px">
+    <img crossorigin="anonymous" src="32.jpg" id="i32" style="width:200px;height:200px">
+    <img crossorigin="anonymous" src="33.jpg" id="i33" style="width:200px;height:200px">
+
+     <img crossorigin="anonymous" src="41.jpg" id="i41" style="width:200px;height:200px">
+    <img crossorigin="anonymous" src="42.jpg" id="i42" style="width:200px;height:200px">
+    <img crossorigin="anonymous" src="43.jpg" id="i43" style="width:200px;height:200px">
+-->
+
+
+</body>
+</html>
