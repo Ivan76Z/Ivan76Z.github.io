@@ -49,7 +49,7 @@ var softmax = function(ar) {
   console.log('1 AND 1',mynn.feedforward([1,1]));
   */
   // several training epochs
-  for(let i=0; i<1000; i++) {
+  for(let i=0; i<10000; i++) {
     let tdata = training_data[Math.floor(Math.random() * training_data.length)];
     mynn.train(tdata[0], tdata[1]);
   }
