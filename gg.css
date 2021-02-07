@@ -235,18 +235,4 @@ label:nth-child(2):hover {
     cursor: pointer;
     background-color: #dcdcdc;
 }
-canvas{
 
-  width:50vw !important;
-  height:50vh !important;
-  margin: 0 auto 0 0 !important;
-
-}
-@media (max-width:600px) {
-canvas{
-
-  width:100vw !important;
-  height:20vh !important;
-
-}
-}
