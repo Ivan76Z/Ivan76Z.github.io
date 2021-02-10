@@ -8,12 +8,13 @@ $('.h').append(`<h1 style="margin: 40px auto">График для id${strGET}</h
 
 Chart.defaults.global.defaultFontFamily = "Lato";
 Chart.defaults.global.defaultFontSize = 18;
-
+$.getJSON('chart_data.json', function(data) {
+	
 var speedData = {
-  labels: ["01.01.21", "01.01.21", "01.01.21", "01.01.21", "01.01.21", "01.01.21", "01.01.21"],
+  labels: data[0]["labels"],
   datasets: [{
     label: "Курс id" + strGET,
-    data: [0, 59, 75, 20, 20, 55, 40],
+    data: data[0]["data"],
     lineTension: 0,
     fill: false,
     borderColor: '#ff6666',
@@ -45,5 +46,5 @@ var lineChart = new Chart(speedCanvas, {
   data: speedData,
   options: chartOptions
 });
-
+});
 	});
