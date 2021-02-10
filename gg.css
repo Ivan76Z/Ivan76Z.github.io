@@ -235,4 +235,11 @@ label:nth-child(2):hover {
     cursor: pointer;
     background-color: #dcdcdc;
 }
+.info-main{
+    margin: 30px auto;
+    width: 60vw;
+}
+.h{
+	text-align: center;
+}
 
