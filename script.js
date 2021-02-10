@@ -12,7 +12,6 @@ $( document ).ready(function() {
                     </td>
                     <td>${data[i-1]["amount"]}</td>
                     <td>${data[i-1]["price"]}</td>
-                    <td>${data[i-1]["id"]}</td>
                 </tr>
 
     		`);
