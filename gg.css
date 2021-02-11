@@ -246,8 +246,10 @@ canvas{
  margin: 20px 0 0 0;
 }
 .info-main{
-  width: 80vw;
-  margin: 0 auto;
+width: 50vw;
+    justify-content: center;
+    display: grid;
+    padding-bottom: 20px;
 }
 .grid-1 {
   padding-top: 40px;
