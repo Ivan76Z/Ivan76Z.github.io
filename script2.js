@@ -5,6 +5,8 @@ $('.h').append(`<h1 style="margin: 40px auto">График для id${strGET}</h
 
 
   var speedCanvas = document.getElementById("speedChart");
+  var speedCanvas2 = document.getElementById("speedChart2");
+  var speedCanvas3 = document.getElementById("speedChart3");
 
 Chart.defaults.global.defaultFontFamily = "Lato";
 Chart.defaults.global.defaultFontSize = 18;
@@ -13,7 +15,7 @@ $.getJSON('chart_data.json', function(data) {
 var speedData = {
   labels: data[0]["labels"],
   datasets: [{
-    label: "Курс id" + strGET,
+    label: "Спрос на товар с id " + strGET,
     data: data[0]["data"],
     lineTension: 0,
     fill: false,
@@ -42,6 +44,80 @@ var chartOptions = {
 };
 
 var lineChart = new Chart(speedCanvas, {
+  type: 'line',
+  data: speedData,
+  options: chartOptions
+});
+	
+	var speedData = {
+  labels: data[1]["labels"],
+  datasets: [{
+    label: "Цена на товар id " + strGET,
+    data: data[0]["data"],
+    lineTension: 0,
+    fill: false,
+    borderColor: '#4c6ce0',
+    backgroundColor: 'transparent',
+    borderDash: [5, 5],
+    pointBorderColor: '#4c6ce0',
+    pointBackgroundColor: '#4c6ce0',
+    pointRadius: 5,
+    pointHoverRadius: 10,
+    pointHitRadius: 30,
+    pointBorderWidth: 2,
+    pointStyle: 'rectRounded'
+  }]
+};
+
+var chartOptions = {
+  legend: {
+    display: true,
+    position: 'top',
+    labels: {
+      boxWidth: 80,
+      fontColor: 'black'
+    }
+  }
+};
+
+var lineChart = new Chart(speedCanvas2, {
+  type: 'line',
+  data: speedData,
+  options: chartOptions
+});
+	
+	var speedData = {
+  labels: data[2]["labels"],
+  datasets: [{
+    label: "Наличие товара id " + strGET,
+    data: data[0]["data"],
+    lineTension: 0,
+    fill: false,
+    borderColor: '#2bcc3b',
+    backgroundColor: 'transparent',
+    borderDash: [5, 5],
+    pointBorderColor: '#2bcc3b',
+    pointBackgroundColor: '#2bcc3b',
+    pointRadius: 5,
+    pointHoverRadius: 10,
+    pointHitRadius: 30,
+    pointBorderWidth: 2,
+    pointStyle: 'rectRounded'
+  }]
+};
+
+var chartOptions = {
+  legend: {
+    display: true,
+    position: 'top',
+    labels: {
+      boxWidth: 80,
+      fontColor: 'black'
+    }
+  }
+};
+
+var lineChart = new Chart(speedCanvas3, {
   type: 'line',
   data: speedData,
   options: chartOptions
