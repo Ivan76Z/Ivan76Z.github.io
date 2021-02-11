@@ -245,4 +245,45 @@ label:nth-child(2):hover {
 canvas{
  margin: 20px 0 0 0;
 }
+.info-main{
+  width: 80vw;
+  margin: 0 auto;
+}
+.grid-1 {
+  padding-top: 40px;
+  display: grid;
+  width: 100%;
+  max-width: 600px;
+  height: 200px;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+/* items */
+.grid-1{
+  margin: 40px 0 0 0;
+}
+.grid-1 div {
+  color: black;
+  font-size: 1rem;
+  padding: 20px;
+  }
+
+.grid-item{
+  border: 2px solid #bdbdbd;
+  border-radius: 10px;
+}
+.grid-title{
+  display: block;
+  color: #494a49;
+  font-size: 0.8rem;
+  justify-self: center;
+}
+.grid-desc{
+  display: block;
+  margin: 20px 0 0 0;
+  color: #000;
+  font-size: 1.5rem;
+  justify-self: center;
+}
 
