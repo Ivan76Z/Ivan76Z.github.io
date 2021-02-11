@@ -80,7 +80,7 @@ var chartOptions2 = {
   }
 };
 
-var lineChart = new Chart(speedCanvas2, {
+var lineChart2 = new Chart(speedCanvas2, {
   type: 'line',
   data: speedData2,
   options: chartOptions2
@@ -117,7 +117,7 @@ var chartOptions3 = {
   }
 };
 
-var lineChart = new Chart(speedCanvas3, {
+var lineChart3 = new Chart(speedCanvas3, {
   type: 'line',
   data: speedData3,
   options: chartOptions3
