@@ -49,11 +49,11 @@ var lineChart = new Chart(speedCanvas, {
   options: chartOptions
 });
 	
-	var speedData = {
+	var speedData2 = {
   labels: data[1]["labels"],
   datasets: [{
     label: "Цена на товар id " + strGET,
-    data: data[0]["data"],
+    data: data[1]["data"],
     lineTension: 0,
     fill: false,
     borderColor: '#4c6ce0',
@@ -69,7 +69,7 @@ var lineChart = new Chart(speedCanvas, {
   }]
 };
 
-var chartOptions = {
+var chartOptions2 = {
   legend: {
     display: true,
     position: 'top',
@@ -82,15 +82,15 @@ var chartOptions = {
 
 var lineChart = new Chart(speedCanvas2, {
   type: 'line',
-  data: speedData,
-  options: chartOptions
+  data: speedData2,
+  options: chartOptions2
 });
 	
-	var speedData = {
+	var speedData3 = {
   labels: data[2]["labels"],
   datasets: [{
     label: "Наличие товара id " + strGET,
-    data: data[0]["data"],
+    data: data[2]["data"],
     lineTension: 0,
     fill: false,
     borderColor: '#2bcc3b',
@@ -106,7 +106,7 @@ var lineChart = new Chart(speedCanvas2, {
   }]
 };
 
-var chartOptions = {
+var chartOptions3 = {
   legend: {
     display: true,
     position: 'top',
@@ -119,8 +119,8 @@ var chartOptions = {
 
 var lineChart = new Chart(speedCanvas3, {
   type: 'line',
-  data: speedData,
-  options: chartOptions
+  data: speedData3,
+  options: chartOptions3
 });
 });
 	});
