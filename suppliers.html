@@ -60,18 +60,19 @@ $( document ).ready(function() {
 	 var data;
 	 $.getJSON('data_suppliers.json', function(data) {
 	 for (let k=1; k<=data.length+1; k++){
-		
+		if((data[k-1]["price"]<max_price) && (data[k-1]["price"]>min_price)){
 		     	$('#tbody').append(`
     		
-                <tr role="row" class="odd" data-id="${data[i-1]["id"]}">
-                    <td>${i}</td>
+                <tr role="row" class="odd" data-id="${data[k-1]["id"]}">
+                    <td>${k}</td>
                     <td style=" left: 58px;">
-                        <div>${data[i-1]["name"]}</div>
+                        <div>${data[k-1]["name"]}</div>
                     </td>
-                    <td>${data[i-1]["price"]}</td>
-                    <td>${data[i-1]["distance"]}</td>
+                    <td>${data[k-1]["price"]}</td>
+                    <td>${data[k-1]["distance"]}</td>
                 </tr>
     		`);	
+		}
 		
 	 }
 	 });
