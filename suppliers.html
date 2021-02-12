@@ -57,6 +57,7 @@ $( document ).ready(function() {
 	var min = document.getElementById("min_price").value;
 	 var max = document.getElementById("max_price").value;
 	   document.getElementById("tbody").innerHTML="";
+	 var data;
 	 $.getJSON('data_suppliers.json', function(data) {
 	 for (let k=1; k<=data.length+1; k++){
 		if((data[k-1]["price"]<max_price) && (data[k-1]["price"]>min_price)){
