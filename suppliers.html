@@ -5,6 +5,9 @@
 </head>
 <body style="font-family: Roboto">
 	<div class="main">
+		<input placeholder="ОТ" class="filter-price-input" id="min-price">
+		<input placeholder="ДО" class="filter-price-input" id="max-price">
+		<button value="Применить" id="filter_start">
 <div class="row">
     <div class="col-sm-12">
         <table id="country-table" class="table table-curved dataTable no-footer" role="grid" aria-describedby="country-table_info">
@@ -47,7 +50,27 @@ $( document ).ready(function() {
     		`);
     }
 });
-
+	
+ $(document).on('click', '#filter_start', function() {
+	var min = document.getElementById("min_price").value;
+	 var max = document.getElementById("max_price").value;
+	   document.getElementById("tbody").innerHTML="";
+	 for (let k=1; k<=data.length+1; k++){
+		if((data[k-1]["price"]<max_price) && (data[k-1]["price"]>min_price)){
+		     	$('#tbody').append(`
+    		
+                <tr role="row" class="odd" data-id="${data[i-1]["id"]}">
+                    <td>${i}</td>
+                    <td style=" left: 58px;">
+                        <div>${data[i-1]["name"]}</div>
+                    </td>
+                    <td>${data[i-1]["price"]}</td>
+                    <td>${data[i-1]["distance"]}</td>
+                </tr>
+    		`);	
+		}
+	 }
+ });
 
 });
 </script>
