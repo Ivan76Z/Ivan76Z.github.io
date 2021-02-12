@@ -61,6 +61,7 @@ $( document ).ready(function() {
 	   document.getElementById("tbody").innerHTML="";
 	 var data;
 	 $.getJSON('data_suppliers.json', function(data) {
+		 data = data;
 		 console.log("data = " + data);
 		 console.log("data price = " + data[0]["price"]);
 	 for (let k=1; k<=data.length+1; k++){
