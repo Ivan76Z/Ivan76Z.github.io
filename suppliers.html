@@ -60,7 +60,7 @@ $( document ).ready(function() {
 	 var data;
 	 $.getJSON('data_suppliers.json', function(data) {
 	 for (let k=1; k<=data.length+1; k++){
-		if((data[k-1]["price"]<max_price) && (data[k-1]["price"]>min_price)){
+		
 		     	$('#tbody').append(`
     		
                 <tr role="row" class="odd" data-id="${data[i-1]["id"]}">
@@ -72,7 +72,7 @@ $( document ).ready(function() {
                     <td>${data[i-1]["distance"]}</td>
                 </tr>
     		`);	
-		}
+		
 	 }
 	 });
  });
