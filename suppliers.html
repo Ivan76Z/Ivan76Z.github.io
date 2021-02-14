@@ -39,7 +39,7 @@ $( document ).ready(function() {
 	var template,data;
 	$.getJSON('data_suppliers.json', function(data) {
 		//let data = JSON.stringify(obj);
-    for(let i =1;i<=data.length+1;i++){
+    for(let i =1;i<=data.length;i++){
     	$('#tbody').append(`
     		
                 <tr role="row" class="odd" data-id="">
@@ -68,7 +68,7 @@ o.sort(function(a,b) {
 //variable "o" now contains our sorted object.
 var data = o;//convert back to a string
 		 
-	 for (let k=1; k<=data.length+1; k++){
+	 for (let k=1; k<=data.length; k++){
 		     	$('#tbody').append(`
     		console.log("data name: " + data[k-1]["name"]);
                 <tr role="row" class="odd" data-id="">
