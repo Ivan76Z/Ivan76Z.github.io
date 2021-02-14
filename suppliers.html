@@ -68,7 +68,7 @@ o.sort(function(a,b) {
 });
 
 var data = o;
-		$("#th_price" ).data("sort","min-max"); 
+		$("#th_price" ).attr("data-sort","min-max"); 
 		 }
 		 
 		 if($("#th_price" ).data("sort") == "min-max"){
@@ -78,7 +78,7 @@ var data = o;
 });
 
 var data = o;
-		$("#th_price" ).data("sort","max-min"); 	 
+		$("#th_price" ).attr("data-sort","max-min");   
 		 }
 		 
 	 for (let k=1; k<=data.length; k++){
