@@ -60,7 +60,7 @@ $( document ).ready(function() {
 	 var o = [];
 	 $.getJSON('data_suppliers.json', function(data) {
 		 data = data;	
-		 	 o=JSON.parse(data);
+		 	 o=data;
 		 var ascending=true;//change to false for descending
 o.sort(function(a,b) {
         return (a.price - b.price)*(ascending?1:-1);
