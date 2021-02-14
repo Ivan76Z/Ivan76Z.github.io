@@ -79,7 +79,6 @@ for (var number in filterMap) {
 		 data = result;
 
 	 for (let k=1; k<=data.length+1; k++){
-		if((data[k-1]["price"]<max) && (data[k-1]["price"]>min)){
 		     	$('#tbody').append(`
     		
                 <tr role="row" class="odd" data-id="${data[k-1]["id"]}">
@@ -91,7 +90,6 @@ for (var number in filterMap) {
                     <td>${data[k-1]["distance"]}</td>
                 </tr>
     		`);	
-		}
 		
 	 }
 	 });
