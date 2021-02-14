@@ -77,15 +77,15 @@ for (var number in filterMap) {
    return b["distance"] - a["distance"];
 });
 		 data = result;
-		 console.log("data name: " + data[0]["name"]);
+		 
 
 	 for (let k=1; k<=data.length+1; k++){
 		     	$('#tbody').append(`
-    		
+    		console.log("data name: " + data[k-1]["name"]);
                 <tr role="row" class="odd" data-id="">
                     <td>${k}</td>
                     <td style=" left: 58px;">
-                        <div>${data[k-1]["name"]}</div>
+                        <div>` + data[k-1]["name"] + `</div>
                     </td>
                     <td>${data[k-1]["price"]}</td>
                     <td>${data[k-1]["distance"]}</td>
