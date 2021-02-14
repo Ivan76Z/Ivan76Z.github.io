@@ -54,19 +54,32 @@ $( document ).ready(function() {
     }
 });
 	
- $(document).on('click', '#th_distance', function() {
+ $(document).on('click', '#th_price', function() {
 	   document.getElementById("tbody").innerHTML="";
 	 var data;
 	 var o = [];
 	 $.getJSON('data_suppliers.json', function(data) {
 		 data = data;	
 		 	 o=data;
-		 var ascending=true;//change to false for descending
+		 if(($("#th_price" ).data("sort") = "none") || ($("#th_price" ).data("sort") = "max-min")){
+		 var ascending=true;
 o.sort(function(a,b) {
         return (a.price - b.price)*(ascending?1:-1);
 });
-//variable "o" now contains our sorted object.
-var data = o;//convert back to a string
+
+var data = o;
+		$("#th_price" ).data("sort","min-max"); 
+		 }
+		 
+		 if($("#th_price" ).data("sort") = "min-max"){
+		 var ascending=false;
+        o.sort(function(a,b) {
+         return (a.price - b.price)*(ascending?1:-1);
+});
+
+var data = o;
+		$("#th_price" ).data("sort","max-min"); 	 
+		 }
 		 
 	 for (let k=1; k<=data.length; k++){
 		     	$('#tbody').append(`
