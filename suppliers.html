@@ -4,13 +4,13 @@
 <link rel="stylesheet" type="text/css" href="gg.css">
 </head>
 <body style="font-family: Roboto">
-	<div class="main">
-		<!--
-		<div style="margin: 0 auto;">
-		<input placeholder="ОТ" class="filter-price-input" id="min_price"  style=" margin: 0px auto">
-		<input placeholder="ДО" class="filter-price-input" id="max_price" style=" margin: 0px auto">
-			<div id="filter_start" style="display:block; margin: 0px auto; padding: 5px; border: 1px solid black; border-radius: 5px;">Применить</div>
-			</div> -->
+  <div class="main">
+    <!--
+    <div style="margin: 0 auto;">
+    <input placeholder="ОТ" class="filter-price-input" id="min_price"  style=" margin: 0px auto">
+    <input placeholder="ДО" class="filter-price-input" id="max_price" style=" margin: 0px auto">
+      <div id="filter_start" style="display:block; margin: 0px auto; padding: 5px; border: 1px solid black; border-radius: 5px;">Применить</div>
+      </div> -->
 <div class="row">
     <div class="col-sm-12">
         <table id="country-table" class="table table-curved dataTable no-footer" role="grid" aria-describedby="country-table_info">
@@ -34,14 +34,14 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
-	
+  
 $( document ).ready(function() {
-	var template,data;
-	$.getJSON('data_suppliers.json', function(data) {
-		//let data = JSON.stringify(obj);
+  var template,data;
+  $.getJSON('data_suppliers.json', function(data) {
+    //let data = JSON.stringify(obj);
     for(let i =1;i<=data.length;i++){
-    	$('#tbody').append(`
-    		
+      $('#tbody').append(`
+        
                 <tr role="row" class="odd" data-id="">
                     <td>${i}</td>
                     <td style=" left: 58px;">
@@ -50,40 +50,40 @@ $( document ).ready(function() {
                     <td>${data[i-1]["price"]}</td>
                     <td>${data[i-1]["distance"]}</td>
                 </tr>
-    		`);
+        `);
     }
 });
-	
+  
  $(document).on('click', '#th_price', function() {
-	   document.getElementById("tbody").innerHTML="";
-	 var data;
-	 var o = [];
-	 $.getJSON('data_suppliers.json', function(data) {
-		 data = data;	
-		 	 o=data;
-		 if(($("#th_price" ).attr("data-sort") == "none") || ($("#th_price" ).attr("data-sort") == "max-min")){
-		 var ascending=true;
+     document.getElementById("tbody").innerHTML="";
+   var data;
+   var o = [];
+   $.getJSON('data_suppliers.json', function(data) {
+     data = data; 
+       o=data;
+     if(($("#th_price" ).attr("data-sort") == "none") || ($("#th_price" ).attr("data-sort") == "max-min")){
+     var ascending=true;
 o.sort(function(a,b) {
         return (a.price - b.price)*(ascending?1:-1);
 });
 
 var data = o;
-		$("#th_price" ).attr("data-sort","min-max"); 
-		 } else{
-		 
-		
-		 var ascending=false;
+    $("#th_price" ).attr("data-sort","min-max"); 
+     } else{
+     
+    
+     var ascending=false;
         o.sort(function(a,b) {
          return (a.price - b.price)*(ascending?1:-1);
 });
 
 var data = o;
-		$("#th_price" ).attr("data-sort","max-min");   
-		 }
-		 
-	 for (let k=1; k<=data.length; k++){
-		     	$('#tbody').append(`
-    		console.log("data name: " + data[k-1]["name"]);
+    $("#th_price" ).attr("data-sort","max-min");   
+     }
+     
+   for (let k=1; k<=data.length; k++){
+          $('#tbody').append(`
+        console.log("data name: " + data[k-1]["name"]);
                 <tr role="row" class="odd" data-id="">
                     <td>${k}</td>
                     <td style=" left: 58px;">
@@ -92,41 +92,42 @@ var data = o;
                     <td>${data[k-1]["price"]}</td>
                     <td>${data[k-1]["distance"]}</td>
                 </tr>
-    		`);	
-		
-	 }
-	 });
-	 
-	 $(document).on('click', '#th_distance', function() {
-	   document.getElementById("tbody").innerHTML="";
-	 var data;
-	 var o = [];
-	 $.getJSON('data_suppliers.json', function(data) {
-		 data = data;	
-		 	 o=data;
-		 if(($("#th_distance" ).attr("data-sort") == "none") || ($("#th_distance" ).attr("data-sort") == "max-min")){
-		 var ascending=true;
+        `); 
+    
+   }
+   });
+ });
+   
+   $(document).on('click', '#th_distance', function() {
+     document.getElementById("tbody").innerHTML="";
+   var data;
+   var o = [];
+   $.getJSON('data_suppliers.json', function(data) {
+     data = data; 
+       o=data;
+     if(($("#th_distance" ).attr("data-sort") == "none") || ($("#th_distance" ).attr("data-sort") == "max-min")){
+     var ascending=true;
 o.sort(function(a,b) {
         return (a.distance - b.distance)*(ascending?1:-1);
 });
 
 var data = o;
-		$("#th_distance" ).attr("data-sort","min-max"); 
-		 } else{
-		 
-		
-		 var ascending=false;
+    $("#th_distance" ).attr("data-sort","min-max"); 
+     } else{
+     
+    
+     var ascending=false;
         o.sort(function(a,b) {
          return (a.distance - b.distance)*(ascending?1:-1);
 });
 
 var data = o;
-		$("#th_distance" ).attr("data-sort","max-min");   
-		 }
-		 
-	 for (let k=1; k<=data.length; k++){
-		     	$('#tbody').append(`
-    		console.log("data name: " + data[k-1]["name"]);
+    $("#th_distance" ).attr("data-sort","max-min");   
+     }
+     
+   for (let k=1; k<=data.length; k++){
+          $('#tbody').append(`
+        console.log("data name: " + data[k-1]["name"]);
                 <tr role="row" class="odd" data-id="">
                     <td>${k}</td>
                     <td style=" left: 58px;">
@@ -135,10 +136,10 @@ var data = o;
                     <td>${data[k-1]["price"]}</td>
                     <td>${data[k-1]["distance"]}</td>
                 </tr>
-    		`);	
-		
-	 }
-	 });
+        `); 
+    
+   }
+   });
  });
 
 });
