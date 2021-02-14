@@ -96,6 +96,49 @@ var data = o;
 		
 	 }
 	 });
+	 
+	 $(document).on('click', '#th_distance', function() {
+	   document.getElementById("tbody").innerHTML="";
+	 var data;
+	 var o = [];
+	 $.getJSON('data_suppliers.json', function(data) {
+		 data = data;	
+		 	 o=data;
+		 if(($("#th_distance" ).attr("data-sort") == "none") || ($("#th_distance" ).attr("data-sort") == "max-min")){
+		 var ascending=true;
+o.sort(function(a,b) {
+        return (a.distance - b.distance)*(ascending?1:-1);
+});
+
+var data = o;
+		$("#th_distance" ).attr("data-sort","min-max"); 
+		 } else{
+		 
+		
+		 var ascending=false;
+        o.sort(function(a,b) {
+         return (a.distance - b.distance)*(ascending?1:-1);
+});
+
+var data = o;
+		$("#th_distance" ).attr("data-sort","max-min");   
+		 }
+		 
+	 for (let k=1; k<=data.length; k++){
+		     	$('#tbody').append(`
+    		console.log("data name: " + data[k-1]["name"]);
+                <tr role="row" class="odd" data-id="">
+                    <td>${k}</td>
+                    <td style=" left: 58px;">
+                        <div>${data[k-1]["name"]}</div>
+                    </td>
+                    <td>${data[k-1]["price"]}</td>
+                    <td>${data[k-1]["distance"]}</td>
+                </tr>
+    		`);	
+		
+	 }
+	 });
  });
 
 });
