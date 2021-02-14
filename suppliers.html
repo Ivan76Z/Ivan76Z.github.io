@@ -61,7 +61,7 @@ $( document ).ready(function() {
 	 $.getJSON('data_suppliers.json', function(data) {
 		 data = data;	
 		 	 o=data;
-		 if(($("#th_price" ).data("sort") == "none") || ($("#th_price" ).data("sort") == "max-min")){
+		 if(($("#th_price" ).attr("data-sort") == "none") || ($("#th_price" ).attr("data-sort") == "max-min")){
 		 var ascending=true;
 o.sort(function(a,b) {
         return (a.price - b.price)*(ascending?1:-1);
