@@ -5,20 +5,21 @@
 </head>
 <body style="font-family: Roboto">
 	<div class="main">
+		<!--
 		<div style="margin: 0 auto;">
 		<input placeholder="ОТ" class="filter-price-input" id="min_price"  style=" margin: 0px auto">
 		<input placeholder="ДО" class="filter-price-input" id="max_price" style=" margin: 0px auto">
 			<div id="filter_start" style="display:block; margin: 0px auto; padding: 5px; border: 1px solid black; border-radius: 5px;">Применить</div>
-			</div>
+			</div> -->
 <div class="row">
     <div class="col-sm-12">
         <table id="country-table" class="table table-curved dataTable no-footer" role="grid" aria-describedby="country-table_info">
             <thead>
                 <tr role="row">
                     <th rowspan="1" colspan="1" aria-label="Rank" style="width: 38px;">Номер</th>
-                    <th  tabindex="0" aria-controls="country-table" rowspan="1" colspan="1" aria-label="Country: activate to sort column ascending">Название</th>
-                    <th rowspan="1" colspan="1" aria-label="Cases: activate to sort column ascending" style="width: 62px;">Цена</th>
-                    <th rowspan="1" colspan="1" aria-label="Deaths: activate to sort column ascending" style="width: 48px;">Расстояние</th>
+                    <th  tabindex="0" id="th_title" data-sort="none" aria-controls="country-table" rowspan="1" colspan="1" aria-label="">Название</th>
+                    <th rowspan="1" id="th_price" data-sort="none" colspan="1" aria-label="" style="width: 62px;">Цена</th>
+                    <th rowspan="1" id="th_distance" data-sort="none" id="th_price" colspan="1" aria-label="" style="width: 48px;">Расстояние</th>
                     
 
                 </tr>
@@ -53,17 +54,30 @@ $( document ).ready(function() {
     }
 });
 	
- $(document).on('click', '#filter_start', function() {
-	var min = document.getElementById("min_price").value;
-	 console.log("min price =" + min_price[0]);
-	 var max = document.getElementById("max_price").value;
-	 console.log("max price =" + max_price[0]);
+ $(document).on('click', '#th_distance', function() {
+
 	   document.getElementById("tbody").innerHTML="";
 	 var data;
 	 $.getJSON('data_suppliers.json', function(data) {
 		 data = data;
-		 console.log("data = " + data);
-		 console.log("data price = " + data[0]["price"]);
+		 
+		 var filterMap = {};
+data.forEach(function (item) {
+  if (!filterMap[item.number] || filterMap[item.number]["distance"] < item["distance"]) {
+    filterMap[item.number] = item;
+  }
+})
+
+var result = [];
+
+for (var number in filterMap) {
+  result.push(filterMap[number]);
+}
+		 result.sort(function(a , b) {
+   return b["distance"] - a["distance"];
+});
+		 data = result;
+
 	 for (let k=1; k<=data.length+1; k++){
 		if((data[k-1]["price"]<max) && (data[k-1]["price"]>min)){
 		     	$('#tbody').append(`
