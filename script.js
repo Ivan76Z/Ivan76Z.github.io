@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+	document.querySelectorAll(".max_price").html="34343434";
 	var template,data;
 	var max = 0;
 	var total_price = 0;
@@ -21,6 +22,9 @@ $( document ).ready(function() {
 	    if(data[i-1]["price"]>max){max=data[i-1]["price"]}
 	    total_price += data[i-1]["price"];
     }
+		console.log("max= " + max);
+		console.log("total_price= " + total_price);
+		console.log("total_items= " + i);
 		document.querySelectorAll(".max_price").html=max;
 		document.querySelectorAll(".total_price").html=total_price;
 		document.querySelectorAll(".total_items").html=i;
