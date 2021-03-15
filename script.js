@@ -21,13 +21,14 @@ $( document ).ready(function() {
     		`);
 	    if(data[i-1]["price"]>max){max=data[i-1]["price"]}
 	    total_price += data[i-1]["price"];
-    }
-		console.log("max= " + max);
+	    		console.log("max= " + max);
 		console.log("total_price= " + total_price);
 		console.log("total_items= " + i);
 		document.querySelectorAll(".max_price")[0].html=max;
 		document.querySelectorAll(".total_price")[0].html=total_price;
 		document.querySelectorAll(".total_items")[0].html=i;
+    }
+
 		
 });
 
