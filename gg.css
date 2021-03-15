@@ -288,4 +288,8 @@ width: 50vw;
   font-size: 1.5rem;
   justify-self: center;
 }
-
+.search{
+	padding: 5px 10px 5px 10px;
+	border-radius: 5;
+	border: 1px solid #bbb;
+}
