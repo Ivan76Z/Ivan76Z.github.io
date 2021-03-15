@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-	document.querySelectorAll(".max_price")[0].html="34343434";
+	document..getElementById("#max_price").html="34343434";
 	var template,data;
 	var max = 0;
 	var total_price = 0;
@@ -24,9 +24,9 @@ $( document ).ready(function() {
 	    		console.log("max= " + max);
 		console.log("total_price= " + total_price);
 		console.log("total_items= " + i);
-		document.querySelectorAll(".max_price")[0].html=max;
-		document.querySelectorAll(".total_price")[0].html=total_price;
-		document.querySelectorAll(".total_items")[0].html=i;
+		document.getElementById("#max_price").html=max;
+		document.getElementById("#total_price").html=total_price;
+		document.getElementById("#total_items").html=i;
     }
 
 		
