@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-	document..getElementById("#max_price").innerHTML="34343434";
+	document.getElementById("#max_price").innerHTML="34343434";
 	var template,data;
 	var max = 0;
 	var total_price = 0;
