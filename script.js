@@ -21,9 +21,9 @@ $( document ).ready(function() {
 	    if(data[i-1]["price"]>max){max=data[i-1]["price"]}
 	    total_price += data[i-1]["price"];
     }
-		$('.max_price').html(max);
-		$('.total_items').html(i);
-		$('.total_price').html(total_price);
+		document.querySelectorAll(".max_price").html=max;
+		document.querySelectorAll(".total_price").html=total_price;
+		document.querySelectorAll(".total_items").html=i;
 		
 });
 
