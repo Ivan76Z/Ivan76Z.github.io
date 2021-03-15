@@ -300,8 +300,12 @@ width: 50vw;
 	margin: 0 0 0 10px;
 	padding: 5px 10px 5px 10px;
 	border-radius: 5;
-	border: 1px solid #bbb;	
+	border: 2px solid #bbb;	
 	background-color: #fff;
 	border: none; 
 	outline: none;
+}
+.search_b:hover{
+	cursor: pointer;
+	background-color: #bbb;
 }
