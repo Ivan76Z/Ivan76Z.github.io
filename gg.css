@@ -246,7 +246,7 @@ canvas{
  margin: 20px 0 0 0;
 }
 .info-main{
-width: 50vw;
+width: 100%;
     justify-content: center;
     display: grid;
     padding-bottom: 20px;
@@ -287,6 +287,13 @@ width: 50vw;
   color: #000;
   font-size: 1.5rem;
   justify-self: center;
+}
+.grid-icon{
+  display: block;
+  color: #000;
+  font-size: 0.8rem;
+  justify-self: right;
+  width: fit-content;
 }
 .row{
 	margin-top: 20px;
