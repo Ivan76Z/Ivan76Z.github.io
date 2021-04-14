@@ -255,14 +255,14 @@ width: 100%;
     padding-bottom: 20px;
 }
 .grid-1 {
-  padding-top: 40px;
-  display: grid;
-  width: 100%;
-  max-width: 600px;
-  height: 200px;
-  margin: 0 auto;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+    padding-top: 40px;
+    display: grid;
+    width: 800px;
+    max-width: 600px;
+    height: 200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
 }
 /* items */
 .grid-1{
