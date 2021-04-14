@@ -292,9 +292,11 @@ width: 100%;
   justify-self: center;
 }
 .grid-icon{
-position: relative;
+    position: relative;
     color: #8080e4;
     font-size: 40px;
+    float: right;
+    bottom: 10;
     justify-content: right;
     width: fit-content;
 }
