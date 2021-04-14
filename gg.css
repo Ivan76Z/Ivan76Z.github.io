@@ -240,7 +240,10 @@ label:nth-child(2):hover {
     width: 60vw;
 }
 .h{
-	text-align: center;
+    background-color: #8080e4;
+    text-align: center;
+    color: #fff;
+}
 }
 canvas{
  margin: 20px 0 0 0;
@@ -289,11 +292,13 @@ width: 100%;
   justify-self: center;
 }
 .grid-icon{
-  display: block;
-  color: #000;
-  font-size: 0.8rem;
-  justify-self: right;
-  width: fit-content;
+    display: block;
+    color: #8080e4;
+    font-size: 30px;
+    position: relative;
+    left: 80%;
+    justify-content: right;
+    width: fit-content;
 }
 .row{
 	margin-top: 20px;
