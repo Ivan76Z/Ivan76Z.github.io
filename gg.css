@@ -311,7 +311,6 @@ position: relative;
     height: 40px;
     font-size: 40px;
     float: right;
-    width: fit-content;
     bottom: 10;
     justify-content: right;
 }
