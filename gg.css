@@ -347,5 +347,14 @@ border: none;
 	margin: 0 auto;
         width: fit-content;
 }
+.search_i:focus{
+	border: none;
+    outline: none;
+    padding: 10px 15px 10px 15px;
+    Color: #fff;
+    font-family: 'Montserrat',sans-serif;
+    border-radius: 6px;
+    background-color: #4658b9;
+}
 
 
