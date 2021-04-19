@@ -323,19 +323,20 @@ position: relative;
 	margin-top: 20px;
 }
 .search_i{
-padding: 5px 10px 5px 10px;
-    border-radius: 5px;
+    padding: 10px 15px 10px 10px;
+    border-radius: 6px;
     border: 2px solid #4658b9;
+    font-family: 'Montserrat',sans-serif;
     border-color: #4658b9;
 }
 .search_b{
-	border: none; 
-	outline: none;
-	margin: 0 0 0 10px;
-	padding: 10px 15px 10px 15px;
-	border: 2px solid #4658b9;	
-	border-radius: 8px;
-	background-color: #fff;
+border: none;
+    outline: none;
+    padding: 10px 15px 10px 15px;
+    Color: #fff;
+    font-family: 'Montserrat',sans-serif;
+    border-radius: 6px;
+    background-color: #4658b9;
 }
 .search_b:hover{
 	cursor: pointer;
