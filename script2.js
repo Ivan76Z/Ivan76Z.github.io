@@ -33,9 +33,6 @@ var speedData = {
 };
 
 var chartOptions = {
-	responsive: true,
-    maintainAspectRatio: false,
-    cutoutPercentage: 80,
   legend: {
     display: true,
     position: 'top',
