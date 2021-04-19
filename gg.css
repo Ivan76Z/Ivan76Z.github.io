@@ -29,6 +29,9 @@ body {
 .table td:nth-child(3){
 	border: none;
 }
+.table td:nth-child(4){
+	border: none;
+}
 
 .table thead th {
     vertical-align: bottom;
