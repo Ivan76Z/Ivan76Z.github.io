@@ -262,8 +262,11 @@ cursor: pointer;
     color: #fff;
 }
 }
-canvas{
- margin: 20px 0 0 0;
+canvas#speedChart{
+ margin: 70px 0 0 0;
+border-radius: 10px;
+    margin-top: 50px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 24%);
 }
 .info-main{
 width: 100%;
@@ -343,4 +346,5 @@ padding: 5px 10px 5px 10px;
 	margin: 0 auto;
         width: fit-content;
 }
+
 
