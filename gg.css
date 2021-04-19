@@ -303,13 +303,14 @@ width: 100%;
   justify-self: center;
 }
 .grid-icon{
-    position: relative;
+position: relative;
     color: #8080e4;
+    height: 40px;
     font-size: 40px;
     float: right;
+    width: fit-content;
     bottom: 10;
     justify-content: right;
-    width: fit-content;
 }
 .row{
 	margin-top: 20px;
