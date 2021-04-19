@@ -248,8 +248,9 @@ label:nth-child(2):hover {
 	display: block;
 }
 .odd:hover{
-    cursor: pointer;
-    background-color: #d9d9ff;
+cursor: pointer;
+    background-color: #4658b9;
+    color: #fff;
 }
 .info-main{
     margin: 30px auto;
