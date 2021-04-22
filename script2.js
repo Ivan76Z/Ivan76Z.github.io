@@ -32,7 +32,7 @@ var speedData = {
   },
 	     {
     label: "Спрос на товар с id " + strGET,
-    data: [5],
+    data: [25,25,25,25,25,25,25],
     lineTension: 0,
     fill: false,
     borderColor: '#ff6666',
