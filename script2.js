@@ -31,7 +31,6 @@ var speedData = {
     pointStyle: 'rectRounded'
   },
 	     {
-labels: data[0]["labels"],
   datasets: [{
     label: "Спрос на товар с id " + strGET,
     data: [5],
@@ -48,8 +47,7 @@ labels: data[0]["labels"],
     pointBorderWidth: 2,
     pointStyle: 'rectRounded'
 	     }]
- 
-};
+	     };
 
 var chartOptions = {
   legend: {
