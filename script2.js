@@ -43,7 +43,7 @@ var speedData = {
     pointHoverRadius: 0,
     pointHitRadius: 0,
     pointBorderWidth: 0,
-    pointStyle: 'line'
+    pointStyle: 'rect'
 	     }]
 	     };
 
