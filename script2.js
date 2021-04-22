@@ -29,7 +29,26 @@ var speedData = {
     pointHitRadius: 30,
     pointBorderWidth: 2,
     pointStyle: 'rectRounded'
-  }]
+  },
+	     {
+labels: data[0]["labels"],
+  datasets: [{
+    label: "Спрос на товар с id " + strGET,
+    data: [5],
+    lineTension: 0,
+    fill: false,
+    borderColor: '#ff6666',
+    backgroundColor: 'transparent',
+    borderDash: [5, 5],
+    pointBorderColor: '#ff6666',
+    pointBackgroundColor: '#ff6666',
+    pointRadius: 5,
+    pointHoverRadius: 10,
+    pointHitRadius: 30,
+    pointBorderWidth: 2,
+    pointStyle: 'rectRounded'
+	     }]
+ 
 };
 
 var chartOptions = {
