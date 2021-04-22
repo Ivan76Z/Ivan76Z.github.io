@@ -31,7 +31,6 @@ var speedData = {
     pointStyle: 'rectRounded'
   },
 	     {
-  datasets: [{
     label: "Спрос на товар с id " + strGET,
     data: [5],
     lineTension: 0,
