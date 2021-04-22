@@ -19,11 +19,11 @@ var speedData = {
     data: data[0]["data"],
     lineTension: 0,
     fill: false,
-    borderColor: '#ff6666',
+    borderColor: '#eb8f34',
     backgroundColor: 'transparent',
     borderDash: [5, 5],
-    pointBorderColor: '#ff6666',
-    pointBackgroundColor: '#ff6666',
+    pointBorderColor: '#eb8f34',
+    pointBackgroundColor: '#eb8f34',
     pointRadius: 5,
     pointHoverRadius: 10,
     pointHitRadius: 30,
@@ -31,7 +31,6 @@ var speedData = {
     pointStyle: 'rectRounded'
   },
 	     {
-    label: "Спрос на товар с id " + strGET,
     data: [25,25,25,25,25,25,25],
     lineTension: 0,
     fill: false,
