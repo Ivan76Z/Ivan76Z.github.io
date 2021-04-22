@@ -39,11 +39,10 @@ var speedData = {
     borderDash: [5, 5],
     pointBorderColor: '#ff6666',
     pointBackgroundColor: '#ff6666',
-    pointRadius: 5,
-    pointHoverRadius: 10,
-    pointHitRadius: 30,
-    pointBorderWidth: 2,
-    pointStyle: 'rectRounded'
+    pointRadius: 0,
+    pointHoverRadius: 0,
+    pointHitRadius: 0,
+    pointBorderWidth: 0
 	     }]
 	     };
 
