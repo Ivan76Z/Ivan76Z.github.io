@@ -20,11 +20,6 @@ var speedData = {
                 lineStyle: "dotted|solid",
                 width: 2
             },
-	  		     options: {
-  legend: {
-    display: false,
-  },
-},
     label: "Спрос на товар с id " + strGET,
     data: data[0]["data"],
     lineTension: 0,
@@ -74,7 +69,7 @@ var speedData = {
 
 var chartOptions = {
   legend: {
-    display: true,
+    display: false,
     position: 'top',
     labels: {
       boxWidth: 80,
