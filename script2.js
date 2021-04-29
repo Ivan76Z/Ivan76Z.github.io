@@ -36,8 +36,7 @@ var speedData = {
     pointStyle: 'rectRounded'
   },
 	     {
-    data: [110,70,40,40,30,30,30],
-    label: "Наличие товара id " + strGET,
+    data: [110,110,110,110,110,110,110],
     lineTension: 0,
     fill: false,
     borderColor: '#46b955',
@@ -45,10 +44,25 @@ var speedData = {
     borderDash: [5, 5],
     pointBorderColor: '#46b955',
     pointBackgroundColor: '#46b955',
-    pointRadius: 5,
-    pointHoverRadius: 10,
-    pointHitRadius: 30,
-    pointBorderWidth: 2,
+    pointRadius: 0,
+    pointHoverRadius: 0,
+    pointHitRadius: 0,
+    pointBorderWidth: 0,
+    pointStyle: 'rect'
+	     },
+	    {
+    data: [10,10,10,10,10,10,10],
+    lineTension: 0,
+    fill: false,
+    borderColor: '#46b955',
+    backgroundColor: 'transparent',
+    borderDash: [5, 5],
+    pointBorderColor: '#46b955',
+    pointBackgroundColor: '#46b955',
+    pointRadius: 0,
+    pointHoverRadius: 0,
+    pointHitRadius: 0,
+    pointBorderWidth: 0,
     pointStyle: 'rect'
 	     }]
 	     };
