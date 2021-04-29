@@ -31,7 +31,7 @@ var speedData = {
     pointStyle: 'rectRounded'
   },
 	     {
-    data: [25,25,25,25,25,25,25],
+    data: [110,70,40,40,40,0,0],
     lineTension: 0,
     fill: false,
     borderColor: '#ff6666',
@@ -44,7 +44,12 @@ var speedData = {
     pointHitRadius: 0,
     pointBorderWidth: 0,
     pointStyle: 'rect'
-	     }]
+	     },
+	    trendlineLinear: {
+                style: "rgb(43 ,66 ,255, 0.3)",
+                lineStyle: "dotted|solid",
+                width: 2
+            }]
 	     };
 
 var chartOptions = {
