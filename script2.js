@@ -37,6 +37,7 @@ var speedData = {
   },
 	     {
     data: [110,110,110,110,110,110,110],
+label: none,
     lineTension: 0,
     fill: false,
     borderColor: '#46b955',
@@ -52,6 +53,7 @@ var speedData = {
 	     },
 	    {
     data: [10,10,10,10,10,10,10],
+		    label: none,
     lineTension: 0,
     fill: false,
     borderColor: '#46b955',
