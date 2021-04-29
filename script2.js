@@ -37,8 +37,11 @@ var speedData = {
   },
 	     {
     data: [110,110,110,110,110,110,110],
-        title: function() {},
-        label: function() {},
+		     options: {
+  legend: {
+    display: false,
+  },
+},
     lineTension: 0,
     fill: false,
     borderColor: '#46b955',
@@ -54,8 +57,11 @@ var speedData = {
 	     },
 	    {
     data: [10,10,10,10,10,10,10],
-        title: function() {},
-        label: function() {},
+		    		     options: {
+  legend: {
+    display: false,
+  },
+},
     lineTension: 0,
     fill: false,
     borderColor: '#46b955',
