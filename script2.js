@@ -37,6 +37,7 @@ var speedData = {
   },
 	     {
     data: [110,110,110,110,110,110,110],
+		     label: "Макс.",
     lineTension: 0,
     fill: false,
     borderColor: '#46b955',
@@ -52,6 +53,7 @@ var speedData = {
 	     },
 	    {
     data: [10,10,10,10,10,10,10],
+		label: "Мин.",
     lineTension: 0,
     fill: false,
     borderColor: '#46b955',
@@ -69,7 +71,7 @@ var speedData = {
 
 var chartOptions = {
   legend: {
-    display: false,
+    display: true,
     position: 'top',
     labels: {
       boxWidth: 80,
