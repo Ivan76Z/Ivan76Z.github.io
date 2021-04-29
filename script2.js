@@ -15,6 +15,11 @@ $.getJSON('chart_data.json', function(data) {
 var speedData = {
   labels: data[0]["labels"],
   datasets: [{
+	  trendlineLinear: {
+                style: "rgb(43 ,66 ,255, 0.3)",
+                lineStyle: "dotted|solid",
+                width: 2
+            },
     label: "Спрос на товар с id " + strGET,
     data: data[0]["data"],
     lineTension: 0,
@@ -44,12 +49,7 @@ var speedData = {
     pointHitRadius: 0,
     pointBorderWidth: 0,
     pointStyle: 'rect'
-	     },
-	    trendlineLinear: {
-                style: "rgb(43 ,66 ,255, 0.3)",
-                lineStyle: "dotted|solid",
-                width: 2
-            }]
+	     }]
 	     };
 
 var chartOptions = {
