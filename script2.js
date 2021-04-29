@@ -20,6 +20,11 @@ var speedData = {
                 lineStyle: "dotted|solid",
                 width: 2
             },
+	  		     options: {
+  legend: {
+    display: false,
+  },
+},
     label: "Спрос на товар с id " + strGET,
     data: data[0]["data"],
     lineTension: 0,
@@ -37,11 +42,6 @@ var speedData = {
   },
 	     {
     data: [110,110,110,110,110,110,110],
-		     options: {
-  legend: {
-    display: false,
-  },
-},
     lineTension: 0,
     fill: false,
     borderColor: '#46b955',
@@ -57,11 +57,6 @@ var speedData = {
 	     },
 	    {
     data: [10,10,10,10,10,10,10],
-		    		     options: {
-  legend: {
-    display: false,
-  },
-},
     lineTension: 0,
     fill: false,
     borderColor: '#46b955',
