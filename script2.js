@@ -77,7 +77,14 @@ var chartOptions = {
       boxWidth: 80,
       fontColor: 'black'
     }
-  }
+  },
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    }
 };
 
 var lineChart = new Chart(speedCanvas, {
