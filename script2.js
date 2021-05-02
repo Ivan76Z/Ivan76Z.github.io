@@ -34,39 +34,7 @@ var speedData = {
     pointHitRadius: 30,
     pointBorderWidth: 2,
     pointStyle: 'rectRounded'
-  },
-	     {
-    data: [110,110,110,110,110,110,110],
-		     label: "Макс.",
-    lineTension: 0,
-    fill: false,
-    borderColor: '#46b955',
-    backgroundColor: 'transparent',
-    borderDash: [5, 5],
-    pointBorderColor: '#46b955',
-    pointBackgroundColor: '#46b955',
-    pointRadius: 0,
-    pointHoverRadius: 0,
-    pointHitRadius: 0,
-    pointBorderWidth: 0,
-    pointStyle: 'rect'
-	     },
-	    {
-    data: [10,10,10,10,10,10,10],
-		label: "Мин.",
-    lineTension: 0,
-    fill: false,
-    borderColor: '#4659b9',
-    backgroundColor: 'transparent',
-    borderDash: [5, 5],
-    pointBorderColor: '#4659b9',
-    pointBackgroundColor: '#4659b9',
-    pointRadius: 0,
-    pointHoverRadius: 0,
-    pointHitRadius: 0,
-    pointBorderWidth: 0,
-    pointStyle: 'rect'
-	     }]
+  }]
 	     };
 
 var chartOptions = {
