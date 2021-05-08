@@ -67,6 +67,7 @@ $(document).ready(function() {
         };
 
         var chartOptions = {
+            plugins: {
             legend: {
                     display: true,
                     boxHeight: 10,
@@ -75,7 +76,7 @@ $(document).ready(function() {
                 labels: {
                     fontColor: 'black'
                 }
-            },
+            }},
             scales: {
                 yAxes: [{
                     ticks: {
