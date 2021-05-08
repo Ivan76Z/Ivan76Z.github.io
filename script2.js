@@ -6,7 +6,7 @@ $(document).ready(function() {
     var speedCanvas3 = document.getElementById("speedChart3");
     Chart.defaults.global.legend.labels.pointStyle = "dash";
     Chart.defaults.global.legend.labels.boxHeight = 2;
-    Chart.defaults.global.legend.labels.boxWidth = 2;
+    Chart.defaults.global.legend.labels.boxWidth = 20;
     Chart.defaults.global.defaultFontFamily = "Lato";
     Chart.defaults.global.defaultFontSize = 18;
 
