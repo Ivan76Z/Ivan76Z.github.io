@@ -12,7 +12,7 @@ Chart.defaults.global.defaultFontFamily = "Lato";
 Chart.defaults.global.defaultFontSize = 18;
 $.getJSON('chart_data.json', function(data) {
 	
-var speedData = {
+var speedData = [{
   labels: data[0]["labels"],
   datasets: [{
 	  trendlineLinear: {
@@ -71,7 +71,7 @@ var speedData = {
     pointBorderWidth: 0,
     pointStyle: 'rectRounded'
   }]    
-    };
+    }];
 
 var chartOptions = {
   legend: {
