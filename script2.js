@@ -68,10 +68,11 @@ $(document).ready(function() {
 
         var chartOptions = {
             legend: {
-                display: true,
-                position: 'top',
+                    display: true,
+                    boxHeight: 10,
+                    boxWidth: 20,
+                    position: 'top',
                 labels: {
-                    boxHeight: 1,
                     fontColor: 'black'
                 }
             },
