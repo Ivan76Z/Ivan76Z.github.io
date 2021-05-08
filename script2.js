@@ -12,7 +12,7 @@ Chart.defaults.global.defaultFontFamily = "Lato";
 Chart.defaults.global.defaultFontSize = 18;
 $.getJSON('chart_data.json', function(data) {
 	
-var speedData = [{
+var speedData = {
   labels: data[0]["labels"],
   datasets: [{
 	  trendlineLinear: {
@@ -21,7 +21,7 @@ var speedData = [{
                 width: 2
             },
     label: "Спрос на товар с id " + strGET,
-    data:data[0]["data"],
+    data: data[0]["data"],
     lineTension: 0,
     fill: false,
     borderColor: '#eb8f34',
@@ -34,46 +34,40 @@ var speedData = [{
     pointHitRadius: 30,
     pointBorderWidth: 2,
     pointStyle: 'rectRounded'
-  }]
+  },
+	     {
+    data: [110,110,110,110,110,110,110],
+		     label: "Макс.",
+    lineTension: 0,
+    fill: false,
+    borderColor: '#46b955',
+    backgroundColor: 'transparent',
+    borderDash: [5, 5],
+    pointBorderColor: '#46b955',
+    pointBackgroundColor: '#46b955',
+    pointRadius: 0,
+    pointHoverRadius: 0,
+    pointHitRadius: 0,
+    pointBorderWidth: 0,
+    pointStyle: 'rect'
 	     },
-    {
-	      labels: data[0]["labels"],
-  datasets: [{
-    label: "Спрос на товар с id " + strGET,
-    data:[10,10,10,10,10,10],
+	    {
+    data: [10,10,10,10,10,10,10],
+		label: "Мин.",
     lineTension: 0,
     fill: false,
-    borderColor: '#eb8f34',
+    borderColor: '#4659b9',
     backgroundColor: 'transparent',
     borderDash: [5, 5],
-    pointBorderColor: '#eb8f34',
-    pointBackgroundColor: '#eb8f34',
+    pointBorderColor: '#4659b9',
+    pointBackgroundColor: '#4659b9',
     pointRadius: 0,
     pointHoverRadius: 0,
     pointHitRadius: 0,
     pointBorderWidth: 0,
-    pointStyle: 'rectRounded'
-  }]    
-    },
-    {
-	      labels: data[0]["labels"],
-  datasets: [{
-    label: "Спрос на товар с id " + strGET,
-    data:[Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10)],
-    lineTension: 0,
-    fill: false,
-    borderColor: '#eb8f34',
-    backgroundColor: 'transparent',
-    borderDash: [5, 5],
-    pointBorderColor: '#eb8f34',
-    pointBackgroundColor: '#eb8f34',
-    pointRadius: 0,
-    pointHoverRadius: 0,
-    pointHitRadius: 0,
-    pointBorderWidth: 0,
-    pointStyle: 'rectRounded'
-  }]    
-    }];
+    pointStyle: 'rect'
+	     }]
+	     };
 
 var chartOptions = {
   legend: {
