@@ -36,7 +36,7 @@ var speedData = {
     pointStyle: 'rectRounded'
   },
 	     {
-    data: [Math.max(data[0]["data"])+10,Math.max(data[0]["data"])+10,Math.max(data[0]["data"])+10,Math.max(data[0]["data"])+10,Math.max(data[0]["data"])+10,Math.max(data[0]["data"])+10,Math.max(data[0]["data"])+10],
+    data: [Math.max.apply(null,data[0]["data"])+10,Math.max.apply(null,data[0]["data"])+10,Math.max.apply(null,data[0]["data"])+10,Math.max.apply(null,data[0]["data"])+10,Math.max.apply(null,data[0]["data"])+10,Math.max.apply(null,data[0]["data"])+10,Math.max.apply(null,data[0]["data"])+10],
 		     label: "Макс.",
     lineTension: 0,
     fill: false,
