@@ -71,7 +71,7 @@ $(document).ready(function() {
                 display: true,
                 position: 'top',
                 labels: {
-                    boxWidth: 80,
+                    boxHeight: 10,
                     fontColor: 'black'
                 }
             },
