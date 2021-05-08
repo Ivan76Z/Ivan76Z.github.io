@@ -37,6 +37,7 @@ var speedData = [{
   }]
 	     },
     {
+	      labels: data[0]["labels"],
   datasets: [{
     label: "Спрос на товар с id " + strGET,
     data:[10,10,10,10,10,10],
@@ -55,6 +56,7 @@ var speedData = [{
   }]    
     },
     {
+	      labels: data[0]["labels"],
   datasets: [{
     label: "Спрос на товар с id " + strGET,
     data:[Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10)],
