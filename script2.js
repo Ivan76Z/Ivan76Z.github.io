@@ -35,7 +35,7 @@ var speedData = {
     pointStyle: 'rectRounded'
   },
 	     {
-    data: [1,2,3,4,5,6,7].fill(Math.max.apply(null,data[0]["data"])+10,0,6),
+    data: [1,2,3,4,5,6,7].fill(Math.max.apply(null,data[0]["data"])+10,0,7),
 		     label: "Макс.",
     lineTension: 0,
     fill: false,
@@ -115,7 +115,7 @@ var speedData2 = {
     pointStyle: 'rectRounded'
   },
 	     {
-        data: [1,2,3,4,5,6,7].fill(Math.max.apply(null,data[1]["data"])+10,0,6),
+        data: [1,2,3,4,5,6,7].fill(Math.max.apply(null,data[1]["data"])+10,0,7),
 		     label: "Макс.",
     lineTension: 0,
     fill: false,
@@ -178,7 +178,7 @@ var lineChart2 = new Chart(speedCanvas2, {
     pointStyle: 'rectRounded'
   },
 	     {
-        data: [1,2,3,4,5,6,7].fill(Math.max.apply(null,data[2]["data"])+10,0,6),
+        data: [1,2,3,4,5,6,7].fill(Math.max.apply(null,data[2]["data"])+10,0,7),
 		     label: "Макс.",
     lineTension: 0,
     fill: false,
