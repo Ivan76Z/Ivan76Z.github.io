@@ -1,5 +1,6 @@
 $( document ).ready(function() {
 var strGET = window.location.search.replace( '?', ''); 
+const template = data[0]["data"];
 
 $('.h').append(`<h1 style="margin: 40px auto;padding: 20px 0 20px 0px;">График для id${strGET}</h2>`)
 
@@ -36,7 +37,7 @@ var speedData = {
     pointStyle: 'rectRounded'
   },
 	     {
-    data: [Math.max.apply(null,data[0]["data"])+10,Math.max.apply(null,data[0]["data"])+10,Math.max.apply(null,data[0]["data"])+10,Math.max.apply(null,data[0]["data"])+10,Math.max.apply(null,data[0]["data"])+10,Math.max.apply(null,data[0]["data"])+10,Math.max.apply(null,data[0]["data"])+10],
+    data: [template.fill(Math.max.apply(null,data[0]["data"])+10)],
 		     label: "Макс.",
     lineTension: 0,
     fill: false,
