@@ -21,7 +21,7 @@ var speedData = {
                 width: 2
             },
     label: "Спрос на товар с id " + strGET,
-    data: data[0]["data"],
+    data:data[0]["data"],
     lineTension: 0,
     fill: false,
     borderColor: '#eb8f34',
@@ -35,7 +35,43 @@ var speedData = {
     pointBorderWidth: 2,
     pointStyle: 'rectRounded'
   }]
-	     };
+	     },
+    {
+  datasets: [{
+    label: "Мин.",
+    data:[10,10,10,10,10,10],
+    lineTension: 0,
+    fill: false,
+    borderColor: '#eb8f34',
+    backgroundColor: 'transparent',
+    borderDash: [5, 5],
+    pointBorderColor: '#eb8f34',
+    pointBackgroundColor: '#eb8f34',
+    pointRadius: 0,
+    pointHoverRadius: 0,
+    pointHitRadius: 0,
+    pointBorderWidth: 0,
+    pointStyle: 'rectRounded'
+  }]    
+    },
+    {
+  datasets: [{
+    label: "Макс.",
+    data:[Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10)],
+    lineTension: 0,
+    fill: false,
+    borderColor: '#eb8f34',
+    backgroundColor: 'transparent',
+    borderDash: [5, 5],
+    pointBorderColor: '#eb8f34',
+    pointBackgroundColor: '#eb8f34',
+    pointRadius: 0,
+    pointHoverRadius: 0,
+    pointHitRadius: 0,
+    pointBorderWidth: 0,
+    pointStyle: 'rectRounded'
+  }]    
+    };
 
 var chartOptions = {
   legend: {
