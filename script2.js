@@ -69,7 +69,7 @@ $(document).ready(function() {
         var chartOptions = {
             legend: {
                 display: true,
-                boxWidth: 10;
+                boxWidth: 10,
                 position: 'top',
                 labels: {
                     boxWidth: 80,
