@@ -93,77 +93,129 @@ var lineChart = new Chart(speedCanvas, {
   options: chartOptions
 });
 var speedData2 = {
-  labels: data[1]["labels"],
+ labels: data[1]["labels"],
   datasets: [{
+	  trendlineLinear: {
+                style: "rgb(43 ,66 ,255, 0.3)",
+                lineStyle: "dotted|solid",
+                width: 2
+            },
     label: "Цена на товар id " + strGET,
     data: data[1]["data"],
     lineTension: 0,
     fill: false,
-    borderColor: '#4c6ce0',
+    borderColor: '#eb8f34',
     backgroundColor: 'transparent',
     borderDash: [5, 5],
-    pointBorderColor: '#4c6ce0',
-    pointBackgroundColor: '#4c6ce0',
+    pointBorderColor: '#eb8f34',
+    pointBackgroundColor: '#eb8f34',
     pointRadius: 5,
     pointHoverRadius: 10,
     pointHitRadius: 30,
     pointBorderWidth: 2,
     pointStyle: 'rectRounded'
-  }]
-};
-
-var chartOptions2 = {
-  legend: {
-    display: true,
-    position: 'top',
-    labels: {
-      boxWidth: 80,
-      fontColor: 'black'
-    }
-  }
+  },
+	     {
+    data: [Math.max.apply(null,data[1]["data"])+10,Math.max.apply(null,data[1]["data"])+10,Math.max.apply(null,data[1]["data"])+10,Math.max.apply(null,data[1]["data"])+10,Math.max.apply(null,data[1]["data"])+10,Math.max.apply(null,data[1]["data"])+10,Math.max.apply(null,data[1]["data"])+10],
+		     label: "Макс.",
+    lineTension: 0,
+    fill: false,
+    borderColor: '#46b955',
+    backgroundColor: 'transparent',
+    borderDash: [5, 5],
+    pointBorderColor: '#46b955',
+    pointBackgroundColor: '#46b955',
+    pointRadius: 0,
+    pointHoverRadius: 0,
+    pointHitRadius: 0,
+    pointBorderWidth: 0,
+    pointStyle: 'rect'
+	     },
+	    {
+    data: [10,10,10,10,10,10,10],
+		label: "Мин.",
+    lineTension: 0,
+    fill: false,
+    borderColor: '#4659b9',
+    backgroundColor: 'transparent',
+    borderDash: [5, 5],
+    pointBorderColor: '#4659b9',
+    pointBackgroundColor: '#4659b9',
+    pointRadius: 0,
+    pointHoverRadius: 0,
+    pointHitRadius: 0,
+    pointBorderWidth: 0,
+    pointStyle: 'rect'
+	     }]
 };
 
 var lineChart2 = new Chart(speedCanvas2, {
   type: 'line',
   data: speedData2,
-  options: chartOptions2
+  options: chartOptions
 });
 	
 	var speedData3 = {
-  labels: data[2]["labels"],
+ labels: data[2]["labels"],
   datasets: [{
+	  trendlineLinear: {
+                style: "rgb(43 ,66 ,255, 0.3)",
+                lineStyle: "dotted|solid",
+                width: 2
+            },
     label: "Наличие товара id " + strGET,
     data: data[2]["data"],
     lineTension: 0,
     fill: false,
-    borderColor: '#2bcc3b',
+    borderColor: '#eb8f34',
     backgroundColor: 'transparent',
     borderDash: [5, 5],
-    pointBorderColor: '#2bcc3b',
-    pointBackgroundColor: '#2bcc3b',
+    pointBorderColor: '#eb8f34',
+    pointBackgroundColor: '#eb8f34',
     pointRadius: 5,
     pointHoverRadius: 10,
     pointHitRadius: 30,
     pointBorderWidth: 2,
     pointStyle: 'rectRounded'
-  }]
-};
-
-var chartOptions3 = {
-  legend: {
-    display: true,
-    position: 'top',
-    labels: {
-      boxWidth: 80,
-      fontColor: 'black'
-    }
-  }
+  },
+	     {
+    data: [Math.max.apply(null,data[2]["data"])+10,Math.max.apply(null,data[2]["data"])+10,Math.max.apply(null,data[2]["data"])+10,Math.max.apply(null,data[2]["data"])+10,Math.max.apply(null,data[2]["data"])+10,Math.max.apply(null,data[2]["data"])+10,Math.max.apply(null,data[2]["data"])+10],
+		     label: "Макс.",
+    lineTension: 0,
+    fill: false,
+    borderColor: '#46b955',
+    backgroundColor: 'transparent',
+    borderDash: [5, 5],
+    pointBorderColor: '#46b955',
+    pointBackgroundColor: '#46b955',
+    pointRadius: 0,
+    pointHoverRadius: 0,
+    pointHitRadius: 0,
+    pointBorderWidth: 0,
+    pointStyle: 'rect'
+	     },
+	    {
+    data: [10,10,10,10,10,10,10],
+		label: "Мин.",
+    lineTension: 0,
+    fill: false,
+    borderColor: '#4659b9',
+    backgroundColor: 'transparent',
+    borderDash: [5, 5],
+    pointBorderColor: '#4659b9',
+    pointBackgroundColor: '#4659b9',
+    pointRadius: 0,
+    pointHoverRadius: 0,
+    pointHitRadius: 0,
+    pointBorderWidth: 0,
+    pointStyle: 'rect'
+	     }]
 };
 
 var lineChart3 = new Chart(speedCanvas3, {
   type: 'line',
   data: speedData3,
-  options: chartOptions3
+  options: chartOptions
 });	
 	
 });
