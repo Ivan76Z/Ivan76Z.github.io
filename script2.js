@@ -38,7 +38,7 @@ var speedData = {
 	     },
     {
   datasets: [{
-    label: "Мин.",
+    label: "Спрос на товар с id " + strGET,
     data:[10,10,10,10,10,10],
     lineTension: 0,
     fill: false,
@@ -56,7 +56,7 @@ var speedData = {
     },
     {
   datasets: [{
-    label: "Макс.",
+    label: "Спрос на товар с id " + strGET,
     data:[Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10),Math.max(data[0]["data"]+10)],
     lineTension: 0,
     fill: false,
