@@ -1,6 +1,5 @@
 $( document ).ready(function() {
 var strGET = window.location.search.replace( '?', ''); 
-const template = data[0]["data"];
 
 $('.h').append(`<h1 style="margin: 40px auto;padding: 20px 0 20px 0px;">График для id${strGET}</h2>`)
 
@@ -12,7 +11,7 @@ $('.h').append(`<h1 style="margin: 40px auto;padding: 20px 0 20px 0px;">Граф
 Chart.defaults.global.defaultFontFamily = "Lato";
 Chart.defaults.global.defaultFontSize = 18;
 $.getJSON('chart_data.json', function(data) {
-	
+	const template = data[0]["data"];
 var speedData = {
   labels: data[0]["labels"],
   datasets: [{
