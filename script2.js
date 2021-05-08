@@ -4,7 +4,9 @@ $(document).ready(function() {
     var speedCanvas = document.getElementById("speedChart");
     var speedCanvas2 = document.getElementById("speedChart2");
     var speedCanvas3 = document.getElementById("speedChart3");
-    Chart.defaults.global.legend.labels.usePointStyle = true;
+    Chart.defaults.global.legend.labels.pointStyle = dotted;
+    Chart.defaults.global.legend.labels.boxHeight = 5;
+    Chart.defaults.global.legend.labels.boxWidth = 20;
     Chart.defaults.global.defaultFontFamily = "Lato";
     Chart.defaults.global.defaultFontSize = 18;
 
@@ -71,8 +73,6 @@ $(document).ready(function() {
             plugins: {
             legend: {
                     display: true,
-                    boxHeight: 10,
-                    boxWidth: 20,
                     position: 'top',
                 labels: {
                     fontColor: 'black'
