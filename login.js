@@ -15,7 +15,12 @@ $(document).ready(function() {
    }
    
      function login(a,b){
+        var a=a;
+        var b=b;
+        
         console.log("Функция login");
+        console.log("Логин = " + a);
+        console.log("Пароль = " + b);
      if (a=="admin" && b=="12345") {
         console.log("Пароль верный");
         console.log("Перед login сетайтемом значение = " + localStorage.getItem('project_auth'));
