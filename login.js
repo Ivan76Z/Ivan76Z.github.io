@@ -1,7 +1,7 @@
 $(document).ready(function() {
    function login_form(){
      $('body').prepend(`
-<div style="position: absolute; z-index:999; width:100vw; height: 100vh; top:0; right: 0; bottom: 0; left: 0;">
+<div style="position: absolute; z-index:999; width:100vw; height: 100vh; top:0; right: 0; bottom: 0; left: 0; background color: #fff;">
 <h1 style="margin: 40px auto;padding: 20px 0 20px 0px;">Авторизация</h2>
 <center>
 <h2 style="margin: 50px 0 0 0;">Вход</h2>
@@ -26,6 +26,7 @@ $(document).ready(function() {
         console.log("Перед login сетайтемом значение = " + localStorage.getItem('project_auth'));
        localStorage.setItem('project_auth',true);
         console.log("После login сетайтема значение = " + localStorage.getItem('project_auth'));
+        location.reload();
      }
    }
    
