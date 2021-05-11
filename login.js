@@ -13,37 +13,28 @@ $(document).ready(function() {
 </center>
 </div>
 `);
-      console.log("Форма отрисовалась");
    }
    
      function login(a,b){
         var a=a;
         var b=b;
         
-        console.log("Функция login");
-        console.log("Логин = " + a);
-        console.log("Пароль = " + b);
-     if (a=="admin" && b=="12345") {
-        console.log("Пароль верный");
-        console.log("Перед login сетайтемом значение = " + localStorage.getItem('project_auth'));
-       localStorage.setItem('project_auth',true);
-        console.log("После login сетайтема значение = " + localStorage.getItem('project_auth'));
+    $.getJSON('users.json', function(data) {
+        //let data = JSON.stringify(obj);
+        for (var i = 1; i <= data.length + 1; i++) {
+           if (a==data[i-1]["login"] && b==data[i-1]["password"]){
+                     localStorage.setItem('project_auth',true);
         location.reload();
-     }
+           }
+        }
+    });
+        
    }
    
   $(document).on('click', '.login_btn', function() {
                 login($( "#form_login" ).val(),$( "#form_password" ).val());
-              console.log("Кнопка нажата");
             });
    
-                 
-                 
-                 
-                 
-                 
- 
-  
    function verification(){
       console.log("Сетайтем в веривикации = " + localStorage.getItem('project_auth'));
      return (localStorage.getItem('project_auth'))? true : login_form();
