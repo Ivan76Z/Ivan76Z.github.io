@@ -16,15 +16,14 @@ $(document).ready(function() {
    }
    
      function login(a,b){
-        var a=a;
-        var b=b;
-        
     $.getJSON('users.json', function(data) {
         //let data = JSON.stringify(obj);
         for (var i = 1; i <= data.length + 1; i++) {
            if (a==data[i-1]["login"] && b==data[i-1]["password"]){
                      localStorage.setItem('project_auth',true);
         location.reload();
+           } else {
+              alert("Неверный логин или пароль!");
            }
         }
     });
