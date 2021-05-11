@@ -30,7 +30,7 @@ $(document).ready(function() {
    }
    
   $(document).on('click', '.login_btn', function() {
-                login($( "#form_login" ).val(),$( "form_password" ).val());
+                login($( "#form_login" ).val(),$( "#form_password" ).val());
               console.log("Кнопка нажата");
             });
                  
