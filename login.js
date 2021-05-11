@@ -20,9 +20,11 @@ $(document).ready(function() {
         $.getJSON('users.json', function(data) {
             //let data = JSON.stringify(obj);
             for (var i = 1; i <= data.length + 1; i++) {
-                if (a == data[i - 1]["login"] && b == data[i - 1]["password"]) {
-                    localStorage.setItem('project_auth', true);
-                    location.reload();
+                if (a == data[i - 1]["login"]) {
+                    if (b == data[i - 1]["password"]) {
+                        localStorage.setItem('project_auth', true);
+                        location.reload();
+                    }
                 }
             }
             if (localStorage.getItem('project_auth') != true) {
