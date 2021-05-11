@@ -1,7 +1,7 @@
 $(document).ready(function() {
    function login_form(){
-     $('body').append(`
-<div style="position: absolute; z-index:999; width:100vw; height: 100vh;">
+     $('body').prepend(`
+<div style="position: absolute; z-index:999; width:100vw; height: 100vh; top:0; right: 0; bottom: 0; left: 0;">
 <h1 style="margin: 40px auto;padding: 20px 0 20px 0px;">Авторизация</h2>
 <center>
 <h2 style="margin: 50px 0 0 0;">Вход</h2>
@@ -11,24 +11,32 @@ $(document).ready(function() {
 </center>
 </div>
 `);
+      console.log("Форма отрисовалась");
    }
-  
+   
+     function login(a,b){
+        console.log("Функция login");
+     if (a=="admin" && b=="12345") {
+        console.log("Пароль верный");
+        console.log("Перед login сетайтемом значение = " + localStorage.getItem('project_auth'));
+       localStorage.setItem('project_auth',true);
+        console.log("После login сетайтема значение = " + localStorage.getItem('project_auth'));
+     }
+   }
+   
   $(document).on('click', '.login_btn', function() {
-                login($( "#form_login" ).val(),$( "form_password" ).val())
+                login($( "#form_login" ).val(),$( "form_password" ).val());
+              console.log("Кнопка нажата");
             });
                  
                  
                  
                  
                  
-  
-   function login(a,b){
-     if (a=="admin" && b=="12345") {
-       localStorage.setItem('project_auth',true);
-     }
-   }
+ 
   
    function verification(){
+      console.log("Сетайтем в веривикации = " + localStorage.getItem('project_auth'));
      return (localStorage.getItem('project_auth'))? true : login_form();
    }
   
