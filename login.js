@@ -1,14 +1,13 @@
 $(document).ready(function() {
    function login_form(){
      $('body').prepend(`
-<div style="position: absolute; z-index:999; width:100vw; height: 100vh; top:0; right: 0; bottom: 0; left: 0; background color: #fff;">
-<h1 style="margin: 40px auto;padding: 20px 0 20px 0px;">Авторизация</h2>
+<div style="position: absolute; z-index:999; width:100vw; height: 100vh; top:0; right: 0; bottom: 0; left: 0; background-color: #fff;">
 <center>
 <h2 style="margin: 50px 0 0 0;">Вход</h2>
-<input placeholder="Логин" type="text" id="form_login" style="display: block;">
-<input placeholder="Пароль" type="password" id="form_password" style="display: block;">
-<div class="form-button login_btn" style="display: block;">Войти</div>
-<div class="form-button clear_btn" style="display: block;">Сбросить local storage</div>
+<input placeholder="Логин" type="text" id="form_login" style="display: block; margin: 25px 0 0 0;">
+<input placeholder="Пароль" type="password" id="form_password" style="display: block; margin: 25px 0 0 0;">
+<div class="search_b login_btn" style="display: block; margin: 25px 0 0 0; width: fit-content;">Войти</div>
+<div class="search_b clear_btn" style="display: block; margin: 25px 0 0 0;  width: fit-content">Сбросить local storage</div>
 </center>
 </div>
 `);
