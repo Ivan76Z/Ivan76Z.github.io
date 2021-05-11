@@ -1,4 +1,7 @@
 $(document).ready(function() {
+   $('body').prepend(`
+ <div class="search_b" style="position: absolute; z-index:999; width: fit-content; top:0; left: 0;" onclick="localStorage.clear()">Сбросить local storage</div>
+   `);
    function login_form(){
      $('body').prepend(`
 <div style="position: absolute; z-index:999; width:100vw; height: 100vh; top:0; right: 0; bottom: 0; left: 0; background-color: #fff;">
@@ -7,7 +10,6 @@ $(document).ready(function() {
 <input placeholder="Логин" type="text" id="form_login" style="display: block; margin: 25px 0 0 0;">
 <input placeholder="Пароль" type="password" id="form_password" style="display: block; margin: 25px 0 0 0;">
 <div class="search_b login_btn" style="display: block; margin: 25px 0 0 0; width: fit-content;">Войти</div>
-<div class="search_b clear_btn" style="display: block; margin: 25px 0 0 0;  width: fit-content">Сбросить local storage</div>
 </center>
 </div>
 `);
@@ -35,9 +37,6 @@ $(document).ready(function() {
               console.log("Кнопка нажата");
             });
    
-     $(document).on('click', '.clear_btn', function() {
-   storage.clear();
-            });
                  
                  
                  
