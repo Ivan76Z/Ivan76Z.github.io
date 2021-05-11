@@ -7,13 +7,20 @@ $(document).ready(function() {
 <h2 style="margin: 50px 0 0 0;">Вход</h2>
 <input placeholder="Логин" type="text" id="form_login">
 <input placeholder="Пароль" type="password" id="form_password">
-<div class="form-button" id="login_btn">Войти</div>
+<div class="form-button login_btn">Войти</div>
 </center>
 </div>
 `);
    }
   
-  $(document).on('click', '#login_btn', login($( "#form_login" ).val(),$( "form_password" ).val()));
+  $(document).on('click', '.login_btn', function() {
+                login($( "#form_login" ).val(),$( "form_password" ).val())
+            });
+                 
+                 
+                 
+                 
+                 
   
    function login(a,b){
      if (a=="admin" && b=="12345") {
