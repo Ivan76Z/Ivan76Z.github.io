@@ -356,5 +356,10 @@ border: none;
     border-radius: 6px;
     background-color: #4658b9;
 }
+.from-button{
+  border: 2px solid black;
+padding: 10px;
+}
+
 
 
