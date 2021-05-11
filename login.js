@@ -26,7 +26,7 @@ $(document).ready(function() {
                 }
             }
             if (localStorage.getItem('project_auth') != true) {
-                alert(Неверный логин или пароль);
+                alert("Неверный логин или пароль");
             }
         });
     }
