@@ -58,6 +58,7 @@ $(document).ready(function() {
                 return true;
             } else {
                 login_form();
+                return true;
             }
         });
     }
