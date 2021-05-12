@@ -12,6 +12,7 @@ $(document).ready(function() {
     var storage = firebase.storage();
     var storageRef = storage.ref();
     var database = firebase.database();
+    var firebaseRefData = firebase.database().ref("data");
 
     $('body').prepend(`
  <div class="search_b storage-clear" onclick="firebase.default.auth().signOut().then(() => {}).catch((error) => {});">Выйти</div>
