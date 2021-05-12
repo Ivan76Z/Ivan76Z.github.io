@@ -1,10 +1,21 @@
 $(document).ready(function() {
-        firebase.default.auth().onAuthStateChanged(function(user) {
+        firebase.default.auth().onAuthStateChanged(function(user) {  
             if (user) {
+                    
     document.getElementById("max_price").innerHTML = "34343434";
     var template, data;
     var max = 0;
     var total_price = 0;
+                    
+                    storageRef.child('gs://project-test-c096d.appspot.com/data.json').getDownloadURL()
+  .then((url) => {
+console.log("Url: " + url);
+  })
+  .catch((error) => {
+    console.log("Ошибка: " + error);
+  });
+                    
+                    
     $.getJSON('data.json', function(data) {
         //let data = JSON.stringify(obj);
         for (var i = 1; i <= data.length + 1; i++) {
