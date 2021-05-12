@@ -6,8 +6,6 @@ $(document).ready(function() {
     var template, data;
     var max = 0;
     var total_price = 0;
-                        var storage = firebase.storage();
-                        var storageRef = storage.ref();
                     var database = firebase.database();
                         var database = firebase.database();
      var firebaseRefData = firebase.database().ref("data");
