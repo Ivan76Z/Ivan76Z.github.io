@@ -41,6 +41,8 @@
         <script src="login.js"></script>
         <script>
         $(document).ready(function() {
+                    firebase.default.auth().onAuthStateChanged(function(user) {
+            if (user) {
             var template, data;
             $.getJSON('data_suppliers.json', function(data) {
                 //let data = JSON.stringify(obj);
@@ -146,7 +148,8 @@
                     }
                 });
             });
-
+            }
+                    }
         });
         </script>
 </body>
