@@ -9,8 +9,6 @@ $(document).ready(function() {
         appId: "1:329123215105:web:33b66c422a431968bb4d00"
     };
     firebase.initializeApp(firebaseConfig);
-    var storage = firebase.storage();
-    var storageRef = storage.ref();
     var database = firebase.database();
     var firebaseRefData = firebase.database().ref("data");
 
