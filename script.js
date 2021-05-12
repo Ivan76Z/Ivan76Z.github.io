@@ -6,8 +6,9 @@ $(document).ready(function() {
     var template, data;
     var max = 0;
     var total_price = 0;
-                    
-                    storageRef.child('gs://project-test-c096d.appspot.com/data.json').getDownloadURL()
+                        var storage = firebase.storage();
+                        var storageRef = storage.ref();
+                        storageRef.child('gs://project-test-c096d.appspot.com/data.json').getDownloadURL()
   .then((url) => {
 console.log("Url: " + url);
   })
