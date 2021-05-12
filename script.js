@@ -10,14 +10,7 @@ $(document).ready(function() {
                         var storageRef = storage.ref();
                         storageRef.child('data.json').getDownloadURL()
   .then((url) => {
-console.log("Url: " + url);
-  })
-  .catch((error) => {
-    console.log("Ошибка: " + error);
-  });
-                    
-                    
-    $.getJSON('data.json', function(data) {
+    $.getJSON(url, function(data) {
         //let data = JSON.stringify(obj);
         for (var i = 1; i <= data.length + 1; i++) {
 
@@ -42,7 +35,11 @@ console.log("Url: " + url);
 
 
     });
-
+  })
+  .catch((error) => {
+    alert("Ошибка загрузки файла data.json: " + error);
+  });
+                    
   }
         });
 });
