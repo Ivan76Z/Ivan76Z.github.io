@@ -3,11 +3,14 @@ $(document).ready(function() {
         apiKey: "AIzaSyDd9ghTgWpuBsji_M96fQX6_TjOGFOUdLo",
         authDomain: "project-test-c096d.firebaseapp.com",
         projectId: "project-test-c096d",
+        databaseURL: "gs://project-test-c096d.appspot.com/",
         storageBucket: "project-test-c096d.appspot.com",
         messagingSenderId: "329123215105",
         appId: "1:329123215105:web:33b66c422a431968bb4d00"
     };
     firebase.initializeApp(firebaseConfig);
+    var storage = firebase.storage();
+    var storageRef = storage.ref();
 
     $('body').prepend(`
  <div class="search_b storage-clear" onclick="firebase.default.auth().signOut().then(() => {}).catch((error) => {});">Выйти</div>
