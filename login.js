@@ -1,17 +1,14 @@
 $(document).ready(function() {
-    
-      // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDd9ghTgWpuBsji_M96fQX6_TjOGFOUdLo",
-    authDomain: "project-test-c096d.firebaseapp.com",
-    projectId: "project-test-c096d",
-    storageBucket: "project-test-c096d.appspot.com",
-    messagingSenderId: "329123215105",
-    appId: "1:329123215105:web:33b66c422a431968bb4d00"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-    
+    var firebaseConfig = {
+        apiKey: "AIzaSyDd9ghTgWpuBsji_M96fQX6_TjOGFOUdLo",
+        authDomain: "project-test-c096d.firebaseapp.com",
+        projectId: "project-test-c096d",
+        storageBucket: "project-test-c096d.appspot.com",
+        messagingSenderId: "329123215105",
+        appId: "1:329123215105:web:33b66c422a431968bb4d00"
+    };
+    firebase.initializeApp(firebaseConfig);
+
     $('body').prepend(`
  <div class="search_b storage-clear" onclick="firebase.default.auth().signOut().then(() => {}).catch((error) => {});">Выйти</div>
    `);
@@ -30,19 +27,25 @@ $(document).ready(function() {
     }
 
     function login(email, password) {
-firebase.default.auth().signInWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    var user = userCredential.user;
-    location.reload();
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(errorCode);
-    if (errorCode == "auth/wrong-password"){
-        alert("Неверный логин или пароль");
-    }
-  });
+        firebase.default.auth().signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                var user = userCredential.user;
+                location.reload();
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                switch (errorCode) {
+                    case "auth/wrong-password":
+                        alert('Неверный логин или пароль');
+                        break;
+                    case "auth/invalid-email":
+                        alert('Неверный формат email');
+                        break;
+                    default:
+                        alert("Что-то пошло не так");
+                }
+            });
     }
 
     $(document).on('click', '.login_btn', function() {
@@ -51,12 +54,12 @@ firebase.default.auth().signInWithEmailAndPassword(email, password)
 
     function verification() {
         firebase.default.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    return true;
-  } else {
-    login_form();
-  }
-});
+            if (user) {
+                return true;
+            } else {
+                login_form();
+            }
+        });
     }
     verification();
 });
