@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('body').prepend(`
- <div class="search_b storage-clear" onclick="localStorage.clear()">Сбросить local storage</div>
+ <div class="search_b storage-clear" onclick="firebase.auth().signOut().then(() => {}).catch((error) => {});">Выйти</div>
    `);
 
     function login_form() {
@@ -16,21 +16,17 @@ $(document).ready(function() {
 `);
     }
 
-    function login(a, b) {
-        $.getJSON('users.json', function(data) {
-            //let data = JSON.stringify(obj);
-            for (var i = 1; i <= data.length; i++) {
-                if (a == data[i - 1]["login"]) {
-                    if (b == data[i - 1]["password"]) {
-                        localStorage.setItem('project_auth', true);
-                        location.reload();
-                    }
-                }
-            }
-            if (localStorage.getItem('project_auth') == false || localStorage.getItem('project_auth') == null) {
-                alert("Неверный логин или пароль");
-            }
-        });
+    function login(email, password) {
+firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    var user = userCredential.user;
+    location.reload();
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    alert(errorMessage);
+  });
     }
 
     $(document).on('click', '.login_btn', function() {
@@ -38,7 +34,13 @@ $(document).ready(function() {
     });
 
     function verification() {
-        return (localStorage.getItem('project_auth')) ? true : login_form();
+        firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    return true;
+  } else {
+    login_form();
+  }
+});
     }
     verification();
 });
