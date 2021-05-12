@@ -11,7 +11,6 @@ $(document).ready(function() {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-    firebase.languageCode = "Russian";
     
     $('body').prepend(`
  <div class="search_b storage-clear" onclick="firebase.default.auth().signOut().then(() => {}).catch((error) => {});">Выйти</div>
@@ -39,7 +38,7 @@ firebase.default.auth().signInWithEmailAndPassword(email, password)
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
-    alert(errorMessage);
+    console.log(errorCode);
   });
     }
 
