@@ -38,7 +38,9 @@ firebase.default.auth().signInWithEmailAndPassword(email, password)
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
-    console.log(errorCode);
+    if (errorCode == "auth/wrong-password"){
+        alert("Неверный логин или пароль");
+    }
   });
     }
 
