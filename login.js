@@ -11,6 +11,7 @@ $(document).ready(function() {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+    firebase.languageCode = "Russian";
     
     $('body').prepend(`
  <div class="search_b storage-clear" onclick="firebase.default.auth().signOut().then(() => {}).catch((error) => {});">Выйти</div>
