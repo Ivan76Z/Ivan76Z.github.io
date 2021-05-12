@@ -13,7 +13,7 @@ $(document).ready(function() {
   firebase.initializeApp(firebaseConfig);
     
     $('body').prepend(`
- <div class="search_b storage-clear" onclick="firebase.auth().signOut().then(() => {}).catch((error) => {});">Выйти</div>
+ <div class="search_b storage-clear" onclick="firebase.default.auth().signOut().then(() => {}).catch((error) => {});">Выйти</div>
    `);
 
     function login_form() {
@@ -30,7 +30,7 @@ $(document).ready(function() {
     }
 
     function login(email, password) {
-firebase.auth().signInWithEmailAndPassword(email, password)
+firebase.default.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     var user = userCredential.user;
     location.reload();
@@ -47,7 +47,7 @@ firebase.auth().signInWithEmailAndPassword(email, password)
     });
 
     function verification() {
-        firebase.auth().onAuthStateChanged(function(user) {
+        firebase.default.auth().onAuthStateChanged(function(user) {
   if (user) {
     return true;
   } else {
