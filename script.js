@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  if (verification()) {
+        firebase.default.auth().onAuthStateChanged(function(user) {
+            if (user) {
     document.getElementById("max_price").innerHTML = "34343434";
     var template, data;
     var max = 0;
@@ -31,4 +32,5 @@ $(document).ready(function() {
     });
 
   }
+        }
 });
