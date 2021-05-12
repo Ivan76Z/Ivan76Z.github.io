@@ -8,7 +8,7 @@ $(document).ready(function() {
     var total_price = 0;
                         var storage = firebase.storage();
                         var storageRef = storage.ref();
-                        storageRef.child('gs://project-test-c096d.appspot.com/data.json').getDownloadURL()
+                        storageRef.child('data.json').getDownloadURL()
   .then((url) => {
 console.log("Url: " + url);
   })
