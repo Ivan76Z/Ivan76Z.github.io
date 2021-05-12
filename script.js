@@ -8,8 +8,14 @@ $(document).ready(function() {
     var total_price = 0;
                         var storage = firebase.storage();
                         var storageRef = storage.ref();
-                        storageRef.child('data.json').getDownloadURL()
-  .then((url) => {
+                    var database = firebase.database();
+                        var database = firebase.database();
+     var firebaseRefData = firebase.database().ref("data");
+                    firebaseRefData.once("value", function(snapshot){
+                            var data = snapshot.val();
+                            console.log(data);
+                    })
+                    
     $.getJSON('https://firebasestorage.googleapis.com/v0/b/project-test-c096d.appspot.com/o/data.json', function(data) {
         //let data = JSON.stringify(obj);
         for (var i = 1; i <= data.length + 1; i++) {
@@ -35,10 +41,6 @@ $(document).ready(function() {
 
 
     });
-  })
-  .catch((error) => {
-    alert("Ошибка загрузки файла data.json: " + error);
-  });
                     
   }
         });
