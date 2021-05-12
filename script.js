@@ -10,7 +10,7 @@ $(document).ready(function() {
                         var storageRef = storage.ref();
                         storageRef.child('data.json').getDownloadURL()
   .then((url) => {
-    $.getJSON(url, function(data) {
+    $.getJSON('https://firebasestorage.googleapis.com/v0/b/project-test-c096d.appspot.com/o/data.json', function(data) {
         //let data = JSON.stringify(obj);
         for (var i = 1; i <= data.length + 1; i++) {
 
