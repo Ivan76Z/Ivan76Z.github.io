@@ -224,5 +224,5 @@ $(document).ready(function() {
 
     });
      }
-             }
+             });
 });
