@@ -22,9 +22,6 @@ $(document).ready(function() {
         `);
             if (data[i - 1]["price"] > max) { max = data[i - 1]["price"] }
             total_price += data[i - 1]["price"];
-            console.log("max= " + max);
-            console.log("total_price= " + total_price);
-            console.log("total_items= " + i);
             document.getElementById("max_price").innerHTML = max;
             document.getElementById("total_price").innerHTML = total_price;
             document.getElementById("total_items").innerHTML = i;
