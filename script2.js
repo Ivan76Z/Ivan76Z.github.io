@@ -1,4 +1,5 @@
 $(document).ready(function() {
+     if (verification) {
     var strGET = window.location.search.replace('?', '');
     $('.h').append(`<h1 style="margin: 40px auto;padding: 20px 0 20px 0px;">График для id${strGET}</h2>`)
     var speedCanvas = document.getElementById("speedChart");
@@ -221,4 +222,5 @@ $(document).ready(function() {
         });
 
     });
+     }
 });
