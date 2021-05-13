@@ -234,6 +234,10 @@ $(document).ready(function() {
         var firebaseRefDataGrid = firebase.database().ref("chart_data_grid");
         firebaseRefDataGrid.once("value", function(snapshot) {
             data_grid = snapshot.val();
+            console.log("data grid  " + data_grid);
+            console.log("data grid value  " + data_grid[0]["value"]);
+            $('.grid-desc:eq(${k+1})').text('11');
+            
             for (var k = 0; k <= data_grid.length; k++) {
                 $('.grid-desc:eq(${k+1})').text(data_grid[k]["value"]);
             }
