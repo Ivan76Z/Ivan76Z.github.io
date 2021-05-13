@@ -229,12 +229,14 @@ $(document).ready(function() {
 
             });
         }
-    });
-    var firebaseRefDataGrid = firebase.database().ref("chart_data_grid");
-    firebaseRefDataGrid.on("value", function(snapshot) {
-        var data = snapshot.val();
-        for (var i = 0; i <= data.length; i++) {
-            $('.grid-desc:eq(${i})').text(data[i]["value"]);
-        }
+
+        var firebaseRefDataGrid = firebase.database().ref("chart_data_grid");
+        firebaseRefDataGrid.once("value", function(snapshot) {
+            var data_grid = snapshot.val();
+            for (var i = 0; i <= data_grid.length; i++) {
+                $('.grid-desc:eq(${i})').text(data_grid[i]["value"]);
+            }
+        });
+
     });
 });
