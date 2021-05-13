@@ -235,7 +235,7 @@ $(document).ready(function() {
         firebaseRefDataGrid.once("value", function(snapshot) {
             data_grid = snapshot.val();          
             for (var k = 0; k <= data_grid.length; k++) {
-                document.querySelectorAll(".grid-desc")[i+1].innerHTML= data_grid[i]["value"];
+                document.querySelectorAll(".grid-desc")[k+1].innerHTML= data_grid[k]["value"];
             }
         });
 
