@@ -232,6 +232,7 @@ $(document).ready(function() {
             });
         }
     });
+    var firebaseRefDataGrid = firebase.database().ref("chart_data_grid");
     firebaseRefDataGrid.once("value", function(snapshot) {
         var data = snapshot.val();
         for (var i = 0; i <= data.length; i++) {
