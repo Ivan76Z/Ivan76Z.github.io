@@ -46,7 +46,7 @@
                     var template, data;
                     var database = firebase.database();
                     var database = firebase.database();
-                    var firebaseRefData = firebase.database().ref("chart_data");
+                    var firebaseRefData = firebase.database().ref("data_suppliers");
                     firebaseRefData.once("value", function(snapshot) {
                         var data = snapshot.val();
                         //let data = JSON.stringify(obj);
