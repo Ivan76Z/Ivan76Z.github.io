@@ -17,6 +17,7 @@ $(document).ready(function() {
             var firebaseRefDataGrid = firebase.database().ref("chart_data_grid");
             firebaseRefData.once("value", function(snapshot) {
                 var data = snapshot.val();
+                var dataGrid;
                 var speedData = {
                     labels: data[0]["labels"],
                     datasets: [{
@@ -232,10 +233,9 @@ $(document).ready(function() {
 
         var firebaseRefDataGrid = firebase.database().ref("chart_data_grid");
         firebaseRefDataGrid.once("value", function(snapshot) {
-            var data_grid = snapshot.val();
-            console.log(data_grid);
-            for (var i = 0; i <= data_grid.length; i++) {
-                $('.grid-desc:eq(${i})').text(data_grid[i]["value"]);
+            data_grid = snapshot.val();
+            for (var k = 0; k <= data_grid.length; k++) {
+                $('.grid-desc:eq(${k+1})').text(data_grid[k]["value"]);
             }
         });
 
