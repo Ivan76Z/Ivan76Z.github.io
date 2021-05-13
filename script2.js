@@ -12,8 +12,6 @@ $(document).ready(function() {
             Chart.defaults.global.defaultFontFamily = "Lato";
             Chart.defaults.global.defaultFontSize = 18;
 
-
-            var database = firebase.database();
             var database = firebase.database();
             var firebaseRefData = firebase.database().ref("chart_data");
             var firebaseRefDataGrid = firebase.database().ref("chart_data_grid");
@@ -233,7 +231,7 @@ $(document).ready(function() {
         }
     });
     var firebaseRefDataGrid = firebase.database().ref("chart_data_grid");
-    firebaseRefDataGrid.once("value", function(snapshot) {
+    firebaseRefDataGrid.on("value", function(snapshot) {
         var data = snapshot.val();
         for (var i = 0; i <= data.length; i++) {
             $('.grid-desc:eq(${i})').text(data[i]["value"]);
