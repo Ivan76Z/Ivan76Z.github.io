@@ -16,6 +16,7 @@ $(document).ready(function() {
             var database = firebase.database();
             var database = firebase.database();
             var firebaseRefData = firebase.database().ref("chart_data");
+            var firebaseRefDataGrid = firebase.database().ref("chart_data_grid");
             firebaseRefData.once("value", function(snapshot) {
                 var data = snapshot.val();
                 var speedData = {
@@ -229,6 +230,12 @@ $(document).ready(function() {
                 });
 
             });
+        }
+    });
+    firebaseRefDataGrid.once("value", function(snapshot) {
+        var data = snapshot.val();
+        for (var i = 0; i <= data.length; i++) {
+            $('.grid-desc:eq(${i})').text(data[i]["value"]);
         }
     });
 });
