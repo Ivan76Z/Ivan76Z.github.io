@@ -133,6 +133,14 @@ $(document).ready(function() {
                             pointStyle: 'rectRounded'
                         },
                         {
+                          label: 'Линия тренда',
+                          borderColor: 'rgb(43 ,66 ,255, 0.3)',
+                          backgroundColor: 'transparent',
+                          borderDash: [5, 5],
+                          pointBorderColor: 'rgb(43 ,66 ,255, 0.3)',
+                          pointBackgroundColor: 'rgb(43 ,66 ,255, 0.3)',
+                        },
+                        {
                             data: [1, 2, 3, 4, 5, 6, 7].fill(Math.max.apply(null, data[1]["data"]) + 10, 0, 7),
                             label: "Макс.",
                             lineTension: 0,
@@ -211,6 +219,14 @@ $(document).ready(function() {
                             pointHitRadius: 0,
                             pointBorderWidth: 0,
                             pointStyle: 'rect'
+                        },
+                        {
+                          label: 'Линия тренда',
+                          borderColor: 'rgb(43 ,66 ,255, 0.3)',
+                          backgroundColor: 'transparent',
+                          borderDash: [5, 5],
+                          pointBorderColor: 'rgb(43 ,66 ,255, 0.3)',
+                          pointBackgroundColor: 'rgb(43 ,66 ,255, 0.3)',
                         },
                         {
                             data: [10, 10, 10, 10, 10, 10, 10],
