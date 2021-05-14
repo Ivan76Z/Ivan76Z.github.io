@@ -1,7 +1,7 @@
 $(document).ready(function() {
     firebase.default.auth().onAuthStateChanged(function(user) {
         if (user) {
-            var strGET = window.location.search.replace('?', '');
+            var strGET = encodeURI(window.location.search.replace('?', ''));
             $('.h').append(`<h1 style="margin: 40px auto;padding: 20px 0 20px 0px;">График для "${strGET}"</h2>`)
             var speedCanvas = document.getElementById("speedChart");
             var speedCanvas2 = document.getElementById("speedChart2");
