@@ -24,7 +24,8 @@ $(document).ready(function() {
                             trendlineLinear: {
                                 style: "rgb(43 ,66 ,255, 0.3)",
                                 lineStyle: "dotted|solid",
-                                width: 2
+                                width: 2,
+                                label: "Линия тренда"
                             },
                             label: "Спрос на товар с id " + strGET,
                             data: data[0]["data"],
