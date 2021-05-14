@@ -257,7 +257,6 @@ $(document).ready(function() {
         }
 
         var firebaseRefDataGrid = firebase.database().ref("chart_data_grid");
-        firebaseRefDataGrid.push("test");
         firebaseRefDataGrid.once("value", function(snapshot) {
             data_grid = snapshot.val();          
             for (var k = 0; k <= data_grid.length; k++) {
