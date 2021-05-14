@@ -27,7 +27,7 @@ $(document).ready(function() {
                                 width: 2,
                                 label: "Линия тренда"
                             },
-                            label: "Спрос на товар с id " + strGET,
+                            label: 'Спрос на товар "' + strGET + '"',
                             data: data[0]["data"],
                             lineTension: 0,
                             fill: false,
@@ -109,7 +109,7 @@ $(document).ready(function() {
                                 lineStyle: "dotted|solid",
                                 width: 2
                             },
-                            label: "Цена на товар id " + strGET,
+                             label: 'Цена на товар "' + strGET + '"',
                             data: data[1]["data"],
                             lineTension: 0,
                             fill: false,
@@ -173,7 +173,7 @@ $(document).ready(function() {
                                 lineStyle: "dotted|solid",
                                 width: 2
                             },
-                            label: "Наличие товара id " + strGET,
+                             label: 'Наличие товара "' + strGET + '"',
                             data: data[2]["data"],
                             lineTension: 0,
                             fill: false,
