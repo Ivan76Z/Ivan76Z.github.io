@@ -59,6 +59,14 @@ $(document).ready(function() {
                             pointStyle: 'rect'
                         },
                         {
+                          label: 'Линия тренда',
+                          borderColor: 'rgb(43 ,66 ,255, 0.3)',
+                          backgroundColor: 'transparent',
+                          borderDash: [5, 5],
+                          pointBorderColor: 'rgb(43 ,66 ,255, 0.3)',
+                          pointBackgroundColor: 'rgb(43 ,66 ,255, 0.3)',
+                        },
+                        {
                             data: [10, 10, 10, 10, 10, 10, 10],
                             label: "Мин.",
                             lineTension: 0,
