@@ -16,7 +16,7 @@ $(document).ready(function() {
                     $('#tbody').append(`
         
                 <tr role="row" class="odd" data-id="${data[i-1]["title"]}">
-                    <td>${i}</td>
+                    <td>${data[i-1]["id"]}</td>
                     <td style=" left: 58px;">
                         <div>${data[i-1]["title"]}</div>
                     </td>
