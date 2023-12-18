@@ -35,6 +35,16 @@ html[xmlns] .clearfix {
   height: 1%;
 }
 
+span.price_n{
+border: none;
+margin: 0;
+padding: 0;
+color: #454545;
+text-decoration: none;
+font-weight: 600;
+margin: 0 0 0 20px;
+}
+
 ul, li {
   padding: 0;
   margin: 0;
@@ -156,7 +166,7 @@ body {
 }
 
 .text-button a {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: #dc8cdb;
   text-decoration: underline !important;
@@ -892,7 +902,7 @@ section.our-courses ul.nacc li .right-content ul {
   margin-bottom: 20px;
 }
 
-section.our-courses ul.nacc li .right-content span {
+section.our-courses ul.nacc li .right-content span.def_span {
   font-size: 14px;
   font-weight: 600;
   margin-right: 30px;
